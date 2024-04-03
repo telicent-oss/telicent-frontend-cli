@@ -23,7 +23,7 @@ function checkNpmContext() {
     ["process.cwd():", process.cwd()],
     ["Current dir:", ""],
     ["  - is npm package:", isNpmPackage],
-    [`  - is ${TEFE}:`, isTefePackage, isNpmPackage ? ` (${require(packageJson).name})` : ''],
+    [`  - is ${TEFE}:`, isTefePackage, isNpmPackage ? ` (${require(packageJson).name}@${require(packageJson).version})` : ''],
     ["  - has tefe installed:", isTefeInstalled],
     [`  - has ${TEFE_CONFIG}:`, tefeJson],
   ];

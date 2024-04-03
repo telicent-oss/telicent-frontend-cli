@@ -11,7 +11,7 @@ const config = ({ logger, args, options }) => {
     logger.info(`${TEFE_CONFIG} created.`);
   } else {
     checkTefeJson();
-    formatJsonFile(TEFE_CONFIG);
+    logger.info(formatJsonFile(TEFE_CONFIG));
   }
 };
 

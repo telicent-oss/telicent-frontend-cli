@@ -10,7 +10,7 @@ vi.mock("module", () => ({
   createRequire: vi.fn().mockReturnValue((modulePath) => {
     if (modulePath.endsWith("package.json")) {
       // Mock the package.json contents
-      return { name: TEFE };
+      return { name: TEFE, version: '123.345.456-test' };
     } else if (modulePath.includes(TEFE)) {
       // Handle TEFE specific path
       return {}; // Mock the expected output for TEFE related module
@@ -43,7 +43,7 @@ describe("checkNpmContext function", () => {
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
-        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli)
+        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli@123.345.456-test)
         - has tefe installed:,
         - has ./tefe.config.json:,false"
     `);
@@ -56,7 +56,7 @@ describe("checkNpmContext function", () => {
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
-        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli)
+        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli@123.345.456-test)
         - has tefe installed:,
         - has ./tefe.config.json:,{}"
     `);
@@ -69,7 +69,7 @@ describe("checkNpmContext function", () => {
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
-        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli)
+        - is @telicent-oss/telicent-frontend-cli:,true, (@telicent-oss/telicent-frontend-cli@123.345.456-test)
         - has tefe installed:,
         - has ./tefe.config.json:,{}"
     `);
