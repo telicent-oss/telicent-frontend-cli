@@ -8,6 +8,7 @@
   "description": "A CLI for FE engineers",
   "main": "./src/index.js",
   "scripts": {
+    "prepare": "husky",
     "test": "vitest",
     "test:watch": "vitest watch",
     "relink": "yarn unlink && yarn link"
