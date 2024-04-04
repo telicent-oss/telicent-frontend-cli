@@ -11,10 +11,10 @@ import readPackageJson from "../src/utils/readPackageJson.js";
 caporal.program
   .version(readPackageJson().version)
     .option("-v, --version", "Get version")
-  .command("info", "Get info")
+  .command("info", "Get context to help CLI developers")
     .action(info)
-  .command("config", "Utils for ./tefe.config.json")
-    .option("--init", "Create file")
+  .command("config", "Show current directory ./tefe.config.json")
+    .option("--init", "Try create ./tefe.config.json")
     .action(config);
 
 

@@ -1,20 +1,20 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-CLI utility help frontend repos stay aligned, and easy to work with.
+A (frontend leaning) CLI utility to help keep npm package code/config stay aligned, and consistent
 
-We envision CLI tool will contain some manually-only scripts (e.g. check system swap), some life-cycle scripts (e.g. lint commands), AND self-executing checks (e.g. _check the lint command is being automatically called on git commit_).
+We envision CLI tool will be a central store of _Telicent frontend opinion_. Specially in the form of:
+1. some manually-only scripts (e.g. check system swap),
+2. some `npm`/`yarn`/`git` life-cycle scripts (e.g. lint before commit),
+3. _and most importantly_, self-executing checks (e.g. _ensure package calls "lint" before "git commit"_).
 
-The general philosophy is: Automate alignment
+The general philosophy is: Automated alignment
 
 ## Install
 
 ```sh
-# Install globally
-npm install -g @telicent-oss/telicent-frontend-cli
-
-# Or, install within a package
-cd $packageDir;
-npm install @telicent-oss/telicent-frontend-cli 
+# Install within a package
+cd <npm package directory>;
+npm install @telicent-oss/telicent-frontend-cli
 # IMPORTANT: If you use `yarn` to install locally, manually prefix with "yarn" e.g. `yarn tefe`
 ```
 
@@ -24,11 +24,15 @@ tefe version # or `yarn tefe version`
 ```
 
 <details>
-  <summary>To use (and develop) commands locally:</summary>
+  <summary>To develop commands:</summary>
 
-**Best Practices for Creating Functionality**:
+NOTE: Developer workflows require heavy use of symlink (via `npm link`).
+It might help to familiarise yourself with the general process of
+[building CLI tools](https://www.google.com/search?q=npm+cli+development+tutorial)
 
-When adding features (like lint, CI scripts) useful for front-end repositories:
+**Best Practices**:
+
+When adding commands that are useful for all npm package repositories:
    - First, try to integrate these directly into this package for automation.
    - If that's not possible, check if the CLI's consumer repos have this feature. Warn them if they don't.
    - If the above two don't work out, just add the feature where it's needed.
@@ -60,7 +64,35 @@ yarn global link @telicent-oss/telicent-frontend-cli
 
 ## Usage
 
-To list available commands
+
+Once this cli is installed in a npm package, the cli will largely take care of itself. It will prompt for developer input only when needed, and try to stay out of the way the rest of the time.
+
+That said, all commands are available via `tefe help`:
+<!-- help -->
 ```sh
-tefe help # Or `yarn tefe help`
+
+
+  USAGE
+
+    ▸ tefe <command> [ARGUMENTS...] [OPTIONS...]
+
+
+  COMMANDS — Type 'tefe help <command>' to get some help about a command
+
+    info                                 Get context to help CLI developers
+    config                               Show current directory ./tefe.config.json
+
+  GLOBAL OPTIONS
+
+    -h, --help                           Display global help or command-related help.
+    -V, --version                        Display version.
+    --no-color                           Disable use of colors in output.
+    -v, --verbose                        Verbose mode: will also output debug messages.
+    --quiet                              Quiet mode - only displays warn and error messages.
+    --silent                             Silent mode: does not output anything, giving no
+                                         indication of success or failure other than the exit
+                                         code.
+
+
 ```
+<!-- /help -->

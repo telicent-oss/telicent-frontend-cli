@@ -1,1 +1,3 @@
 yarn test --watch=false
+# TODO going to simply leave the diff
+node ./scripts/updateReadmeWithTefeHelpCommand.js
