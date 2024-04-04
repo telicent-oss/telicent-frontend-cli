@@ -23,10 +23,46 @@ To test:
 tefe version # or `yarn tefe version`
 ```
 
+## Usage
+
+Once TEFE CLI is installed in a npm package, that should be it for 90% of developers. The cli will largely take care of itself. It will prompt for developer input only when needed, and try to stay out of the way the rest of the time.
+
+That said, all commands are available via `tefe help`:
+<!-- help -->
+```sh
+
+
+  USAGE
+
+    ▸ tefe <command> [ARGUMENTS...] [OPTIONS...]
+
+
+  COMMANDS — Type 'tefe help <command>' to get some help about a command
+
+    info                                 Get context to help CLI developers
+    config                               Show current directory ./tefe.config.json
+
+  GLOBAL OPTIONS
+
+    -h, --help                           Display global help or command-related help.
+    -V, --version                        Display version.
+    --no-color                           Disable use of colors in output.
+    -v, --verbose                        Verbose mode: will also output debug messages.
+    --quiet                              Quiet mode - only displays warn and error messages.
+    --silent                             Silent mode: does not output anything, giving no
+                                         indication of success or failure other than the exit
+                                         code.
+
+
+```
+<!-- /help -->
+
 <details>
   <summary>To develop commands:</summary>
 
-NOTE: Developer workflows require heavy use of symlink (via `npm link`).
+This section explores how to modify the commands if the existing tefe commands do not meet your needs.
+
+NOTE: CLI developer workflows require heavy use of _symlinks_ (via `npm link`).
 It might help to familiarise yourself with the general process of
 [building CLI tools](https://www.google.com/search?q=npm+cli+development+tutorial)
 
@@ -61,38 +97,3 @@ Or to use the package globally:
 yarn global link @telicent-oss/telicent-frontend-cli
 ```
 </details>
-
-## Usage
-
-
-Once this cli is installed in a npm package, the cli will largely take care of itself. It will prompt for developer input only when needed, and try to stay out of the way the rest of the time.
-
-That said, all commands are available via `tefe help`:
-<!-- help -->
-```sh
-
-
-  USAGE
-
-    ▸ tefe <command> [ARGUMENTS...] [OPTIONS...]
-
-
-  COMMANDS — Type 'tefe help <command>' to get some help about a command
-
-    info                                 Get context to help CLI developers
-    config                               Show current directory ./tefe.config.json
-
-  GLOBAL OPTIONS
-
-    -h, --help                           Display global help or command-related help.
-    -V, --version                        Display version.
-    --no-color                           Disable use of colors in output.
-    -v, --verbose                        Verbose mode: will also output debug messages.
-    --quiet                              Quiet mode - only displays warn and error messages.
-    --silent                             Silent mode: does not output anything, giving no
-                                         indication of success or failure other than the exit
-                                         code.
-
-
-```
-<!-- /help -->
