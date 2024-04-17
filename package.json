@@ -7,6 +7,7 @@
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",
     "test:watch": "vitest",
+    "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
     "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link"
   },
   "bin": {
