@@ -7,7 +7,6 @@ import {
   getTefeJson,
   TEFE_CONFIG,
 } from "../../utils/tefe.config.json.utils.js";
-import readLocalJson from "../../utils/readLocalJson.js";
 import { readJsonAtInternal } from "../../utils/readJsonAtInternal.js";
 import { readJsonAtInvoked } from "../../utils/readJsonAtInvoked.js";
 
@@ -24,7 +23,7 @@ function checkNpmContext() {
     ["process.cwd():", process.cwd()],
     ["Current dir:", ""],
     ["  - is npm package:", isNpmPackage],
-    [`  - is ${TEFE}:`, isTefePackage, isNpmPackage ? ` (${readLocalJson(packageJson).name}@${readLocalJson(packageJson).version})` : ''],
+    [`  - is ${TEFE}:`, isTefePackage, isNpmPackage ? ` (${readJsonAtInternal(packageJson).name}@${readJsonAtInternal(packageJson).version})` : ''],
     ["  - has tefe installed:", isTefeInstalled],
     [`  - has ${TEFE_CONFIG}:`, tefeJson],
   ];

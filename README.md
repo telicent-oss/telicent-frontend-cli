@@ -47,6 +47,11 @@ Commands:
 <details>
   <summary>To develop commands:</summary>
 
+**WARNING 1**: TypeScript source files import with `.js` extension e.g. `import a from './path.js`  (as `./src/**/*.ts` is emitted and run from `./dist/**/*.js`)
+**WARNING 2**: JavaScript tes files must not include any extension in imports `import a from './path`
+
+(Why, I've avoided bundling)
+
 This section explores how to modify the commands if the existing tefe commands do not meet your needs.
 
 NOTE: CLI developer workflows require heavy use of _symlinks_ via
