@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import fs from "fs";
 import util from "util";
-import formatJsonFile from "./formatJsonFile.js";
+import formatJsonFile from "./formatJsonFile";
 
 vi.mock("fs");
 

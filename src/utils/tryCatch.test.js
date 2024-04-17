@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import tryCatch from "./tryCatch.js"; // Adjust the import path
+import tryCatch from "./tryCatch"; // Adjust the import path
 
 describe("tryCatch function", () => {
   it("returns success value on successful work function", () => {

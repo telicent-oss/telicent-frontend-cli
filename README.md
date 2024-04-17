@@ -1,13 +1,13 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-A (frontend leaning) CLI utility to help keep npm package code/config stay aligned, and consistent
+CLI package to capture _Telicent frontend opinion_ of code/config/tools.
 
-We envision CLI tool will be a central store of _Telicent frontend opinion_. Specially in the form of:
-1. some manually-only scripts (e.g. check system swap),
-2. some `npm`/`yarn`/`git` life-cycle scripts (e.g. lint before commit),
-3. _and most importantly_, self-executing checks (e.g. _ensure package calls "lint" before "git commit"_).
+Specific ideas:
+1. manually-triggered scripts e.g. check system memory
+2. `npm`/`yarn`/`git` scripts intended for life-cycle hooks e.g. test only changed files
+3. _and most importantly_, self-executing (auto) checks e.g. _For any package that has this CLI installed, automatically ensure the package calls "lint" before "git commit"_ ).
 
-The general philosophy is: Automated alignment
+The general philosophy is: _air quotes_ Automated alignment
 
 ## Install
 
@@ -20,7 +20,7 @@ npm install @telicent-oss/telicent-frontend-cli
 
 To test:
 ```sh
-tefe version # or `yarn tefe version`
+tefe --version # or `yarn tefe version`
 ```
 
 ## Usage
@@ -30,29 +30,16 @@ Once TEFE CLI is installed in a npm package, that should be it for 90% of develo
 That said, all commands are available via `tefe help`:
 <!-- help -->
 ```sh
+Usage: tefe [options] [command]
 
+Options:
+  -h, --help        display help for command
 
-  USAGE
-
-    ▸ tefe <command> [ARGUMENTS...] [OPTIONS...]
-
-
-  COMMANDS — Type 'tefe help <command>' to get some help about a command
-
-    info                                 Get context to help CLI developers
-    config                               Show current directory ./tefe.config.json
-
-  GLOBAL OPTIONS
-
-    -h, --help                           Display global help or command-related help.
-    -V, --version                        Display version.
-    --no-color                           Disable use of colors in output.
-    -v, --verbose                        Verbose mode: will also output debug messages.
-    --quiet                              Quiet mode - only displays warn and error messages.
-    --silent                             Silent mode: does not output anything, giving no
-                                         indication of success or failure other than the exit
-                                         code.
-
+Commands:
+  version           read version
+  info              Get context to help CLI developers
+  config [options]  Show current directory ./tefe.config.json
+  help [command]    display help for command
 
 ```
 <!-- /help -->

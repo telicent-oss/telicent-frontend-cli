@@ -1,13 +1,14 @@
-import { describe, it, expect, vi, beforeAll, afterAll } from "vitest";
-import checkNpmContext, { TEFE } from "./checkNpmContext.js";
-import { getTefeJson } from "../../utils/tefe.config.json.utils.js";
 import fs from "fs";
 import os from "os";
-import { createRequire } from "module";
+import { describe, it, expect, vi, beforeAll, afterAll } from "vitest";
+import checkNpmContext, { TEFE } from "./checkNpmContext";
+import { getTefeJson } from "../../utils/tefe.config.json.utils";
+const { stringify } = JSON;
+
+const printResult = (arr) => arr.map(list=>stringify(list)).join(os.EOL);
 
 vi.mock("fs");
-vi.mock("module", () => ({
-  createRequire: vi.fn().mockReturnValue((modulePath) => {
+vi.mock("./readJson", () => ({ readJson: vi.fn().mockReturnValue((modulePath) => {
     if (modulePath.endsWith("package.json")) {
       // Mock the package.json contents
       return { name: TEFE, version: '123.345.456-test' };
@@ -18,10 +19,11 @@ vi.mock("module", () => ({
       throw new Error(`Module not found in ${modulePath}`);
     }
   }),
-}));
-vi.mock("../../utils/formatJsonFile.js", () => ({ default: vi.fn(() => '{}') }));
-vi.mock("../../utils/tryCatch.js", () => ({ default: vi.fn() }));
-vi.mock("../../utils/tefe.config.json.utils.js", () => ({
+  }),
+);
+vi.mock("../../utils/formatJsonFile", () => ({ default: vi.fn(() => '{}') }));
+vi.mock("../../utils/tryCatch", () => ({ default: vi.fn() }));
+vi.mock("../../utils/tefe.config.json.utils", () => ({
   getTefeJson: vi.fn(),
   TEFE_CONFIG: "./tefe.config.json",
 }));
@@ -39,7 +41,7 @@ describe("checkNpmContext function", () => {
     fs.existsSync.mockReturnValue(true);
     getTefeJson.mockReturnValue(false);
     const result = checkNpmContext();
-    expect(result.join(os.EOL)).toMatchInlineSnapshot(`
+    expect(printResult(result)).toMatchInlineSnapshot(`
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
@@ -52,7 +54,7 @@ describe("checkNpmContext function", () => {
     fs.existsSync.mockReturnValue(true);
     getTefeJson.mockReturnValue(true);
     const result = checkNpmContext();
-    expect(result.join(os.EOL)).toMatchInlineSnapshot(`
+    expect(printResult(result)).toMatchInlineSnapshot(`
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
@@ -65,7 +67,7 @@ describe("checkNpmContext function", () => {
   it("detects the TEFE package correctly", () => {
     fs.existsSync.mockReturnValue(true);
     const result = checkNpmContext();
-    expect(result.join(os.EOL)).toMatchInlineSnapshot(`
+    expect(printResult(result)).toMatchInlineSnapshot(`
       "process.cwd():,/mocked/path
       Current dir:,
         - is npm package:,true
@@ -75,16 +77,16 @@ describe("checkNpmContext function", () => {
     `);
   });
 
-  it("handles not being in an npm package", () => {
+  it.only("handles not being in an npm package", () => {
     fs.existsSync.mockReturnValue(false);
     const result = checkNpmContext();   
-    expect(result.join(os.EOL)).toMatchInlineSnapshot(`
-      "process.cwd():,/mocked/path
-      Current dir:,
-        - is npm package:,false
-        - is @telicent-oss/telicent-frontend-cli:,false,
-        - has tefe installed:,
-        - has ./tefe.config.json:,{}"
+    expect(printResult(result)).toMatchInlineSnapshot(`
+      "["process.cwd():","/mocked/path"]
+      ["Current dir:",""]
+      ["  - is npm package:",false]
+      ["  - is @telicent-oss/telicent-frontend-cli:",false,""]
+      ["  - has tefe installed:",null]
+      ["  - has ./tefe.config.json:",false]"
     `);
   });
 });

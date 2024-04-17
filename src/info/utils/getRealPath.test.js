@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import getRealPath from './getRealPath.js';
+import getRealPath from './getRealPath';
 import fs from 'fs';
 
 vi.mock('fs');

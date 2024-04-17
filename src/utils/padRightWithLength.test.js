@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import padRightWithLength from "./padRightWithLength.js";
+import padRightWithLength from "./padRightWithLength";
 
 describe("padRightWithLength function", () => {
   it("correctly pads a shorter string", () => {

@@ -1,10 +1,10 @@
 import { describe, it, expect, vi } from 'vitest';
-import logList from './logList.js';
+import logList from './logList';
 
 // Required
 import chalk from 'chalk';
-import padRightWithLength from '../../utils/padRightWithLength.js';
-import clean from '../../utils/clean.js';
+import padRightWithLength from '../../utils/padRightWithLength';
+import clean from '../../utils/clean';
 
 
 vi.mock('chalk', () => ({default:{
@@ -12,8 +12,8 @@ vi.mock('chalk', () => ({default:{
   green: vi.fn((str) => `green(${str})`),
   red: vi.fn((str) => `red(${str})`)
 }}));
-vi.mock('../../utils/padRightWithLength.js', () => ({ default: vi.fn((length) => (str) => `padded(${str})`)}));
-vi.mock('../../utils/clean.js', () => ({ default: vi.fn((str) => `cleaned(${str})`)}));
+vi.mock('../../utils/padRightWithLength', () => ({ default: vi.fn((length) => (str) => `padded(${str})`)}));
+vi.mock('../../utils/clean', () => ({ default: vi.fn((str) => `cleaned(${str})`)}));
 
 describe('logList function', () => {
   it('correctly formats and logs list items', () => {
@@ -26,8 +26,8 @@ describe('logList function', () => {
 
     logList(mockLog, list);
 
-    expect(mockLog).toHaveBeenCalledWith('%s', 'cleaned(**padded(Item1)** green(true) Comment1)');
-    expect(mockLog).toHaveBeenCalledWith('%s', 'cleaned(**padded(Item2)** red(false))');
-    expect(mockLog).toHaveBeenCalledWith('%s', 'cleaned(**padded(Item3)** Value3)');
+    expect(mockLog).toHaveBeenCalledWith('cleaned(**padded(Item1)** green(true) Comment1)');
+    expect(mockLog).toHaveBeenCalledWith('cleaned(**padded(Item2)** red(false))');
+    expect(mockLog).toHaveBeenCalledWith('cleaned(**padded(Item3)** Value3)');
   });
 });

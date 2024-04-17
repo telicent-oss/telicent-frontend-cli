@@ -4,7 +4,7 @@ import {
   getTefeJson,
   checkTefeJson,
   createTefeJson,
-} from "./tefe.config.json.utils.js";
+} from "./tefe.config.json.utils";
 
 import fs from "fs";
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import clean from './clean.js';
+import clean from './clean';
 
 describe('clean function', () => {
   it('replaces /Users/<username>/ with ~', () => {
