@@ -3,5 +3,4 @@ import updateNotifier from "update-notifier";
 import fs from 'fs';
 const pkg = JSON.parse(`${fs.readFileSync('./package.json')}`);
 updateNotifier({ pkg }).notify();
-console.log('Auto-update ran');
 //# sourceMappingURL=autoupdate.js.map

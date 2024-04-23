@@ -31,7 +31,6 @@ tefe version # or `yarn tefe version`
 All commands are available via `tefe help`:
 <!-- help -->
 ```sh
-Auto-update ran
 Usage: tefe [options] [command]
 
 Options:
