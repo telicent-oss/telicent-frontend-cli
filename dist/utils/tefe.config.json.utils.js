@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "fs";
 import { PACKAGE_JSON } from "../constants.js";
 import { readJsonAtInternal } from "./readJsonAtInternal.js";
 export const TEFE_CONFIG = "./tefe.config.json";

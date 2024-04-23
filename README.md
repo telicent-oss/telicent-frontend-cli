@@ -1,13 +1,16 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-CLI package to capture _Telicent frontend opinion_ of code/config/tools.
+CLI package to capture & propagate _Telicent frontend opinion_ on code, config & tools
 
-Specific ideas:
-1. manually-triggered scripts e.g. check system memory
-2. `npm`/`yarn`/`git` scripts intended for life-cycle hooks e.g. test only changed files
-3. _and most importantly_, self-executing (auto) checks e.g. _For any package that has this CLI installed, automatically ensure the package calls "lint" before "git commit"_ ).
+Install this in each npm package repository to provide:
+1. Some scripts to manually-trigger
+    * idea: generate Telicent-flavoured™ Cypress config
+2. Some scripts to use in hooks
+    * idea: echo "tefe test-only-changed-files" >> ./husky/pre-commit
+3. Some self-executing checks
+    * idea: on CI, check yarn.lock didn't change after yarn install
 
-The general philosophy is: _air quotes_ Automated alignment
+And perhaps if we add globally-useful dev-scripts, we end up using this as a global install on our dev machines
 
 ## Install
 
@@ -20,16 +23,15 @@ yarn add @telicent-oss/telicent-frontend-cli
 
 To test:
 ```sh
-tefe --version # or `yarn tefe version`
+tefe version # or `yarn tefe version`
 ```
 
 ## Usage
 
-Once TEFE CLI is installed in a npm package, that should be it for 90% of developers. The cli will largely take care of itself. It will prompt for developer input only when needed, and try to stay out of the way the rest of the time.
-
-That said, all commands are available via `tefe help`:
+All commands are available via `tefe help`:
 <!-- help -->
 ```sh
+Auto-update ran
 Usage: tefe [options] [command]
 
 Options:
@@ -39,40 +41,33 @@ Commands:
   version           read version
   info              Get context to help CLI developers
   config [options]  Show current directory ./tefe.config.json
+  noise [options]   Woof (default) or meow
   help [command]    display help for command
 
 ```
 <!-- /help -->
 
+**Note**: This package uses [update-notifier](https://www.npmjs.com/package/update-notifier?activeTab=readme)
+
 <details>
   <summary>To develop commands:</summary>
 
-**WARNING 1**: TypeScript source files import with `.js` extension e.g. `import a from './path.js`  (as `./src/**/*.ts` is emitted and run from `./dist/**/*.js`)
-**WARNING 2**: JavaScript tes files must not include any extension in imports `import a from './path`
+<hr />
 
-(Why, I've avoided bundling)
+### Tips
 
-This section explores how to modify the commands if the existing tefe commands do not meet your needs.
+1. TypeScript source files import with `.js` extension e.g. `import a from './path.js`  (as `./src/**/*.ts` files are emitted and run from `./dist/**/*.js`)
+2. JavaScript test files must not include any extension in imports `import a from './path';`
+3. CLI developer workflows require heavy use of _symlinks_ via
+    * [yarn link](https://classic.yarnpkg.com/lang/en/docs/cli/link/)
+    * [yarn unlink](https://classic.yarnpkg.com/en/docs/cli/unlink#search)
+    * And custom [yarn relink](https://github.com/telicent-oss/telicent-frontend-cli/commit/7e85e2383dd2494486cde4f65146dbb606b49159#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519R10) command for forcing stubborn symlinks to reset
 
-NOTE: CLI developer workflows require heavy use of _symlinks_ via
-* [yarn link](https://classic.yarnpkg.com/lang/en/docs/cli/link/)
-* [yarn unlink](https://classic.yarnpkg.com/en/docs/cli/unlink#search)
-* [yarn relink](https://github.com/telicent-oss/telicent-frontend-cli/commit/7e85e2383dd2494486cde4f65146dbb606b49159#diff-7ae45ad102eab3b6d7e7896acd08c427a9b25b346470d7bc6507b6481575d519R10) for stubborn symlinks that won't unlink
-
-It might help to familiarise yourself with the general process of
+4. It might help to familiarise yourself with the general process of
 [building CLI tools](https://www.google.com/search?q=npm+cli+development+tutorial)
 
 
-**Best Practices**:
-
-When adding commands that are useful for all npm package repositories:
-   - First, try to integrate these directly into this package for automation.
-   - If that's not possible, check if the CLI's consumer repos have this feature. Warn them if they don't.
-   - If the above two don't work out, just add the feature where it's needed.
-
-**Key Point**: This CLI should always be easy to use. So, avoid dependencies on other packages or tools not commonly available. For example, don't use Deno (a JavaScript runtime) or rely too much on shell scripting, particularly for formatting or output ordering (which vary wildly).
-
-**Why?**: The CLI might be used before running any `npm`/`yarn` install. Some tools, like `jq`, may not install or run correctly in some cut-down CI linux distributions e.g. alpine
+### Dev workflow
 
 ```sh
 # To use (and develop) locally:
@@ -93,4 +88,21 @@ Or to use the package globally:
 ```sh
 yarn global link @telicent-oss/telicent-frontend-cli
 ```
+
+### Best Practices
+
+**Automate** - When you have an idea for a CLI task:
+   - Try to automate the task
+   - Else, try to automate part of the task
+   - Else, try to automate errors/warnings
+   - Else, create some feedback to help the next idea
+
+**Inter-operability**: Bias for CLI scripts runninng (consistently) on as many different platforms as possible — including stripped down CI machines. So:
+* avoid non-node code
+* target node 16
+* do not bundle, to allow easy ssh-debugging/editing of scripts on CI machines
+
+**Usefulness**: Avoid being so precious about the code that nothing gets added
+
+
 </details>

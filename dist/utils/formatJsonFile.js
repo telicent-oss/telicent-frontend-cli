@@ -1,5 +1,5 @@
-import * as util from "util";
-import * as fs from "fs";
+import util from "util";
+import fs from "fs";
 function formatJsonFile(filePath) {
     const config = fs.readFileSync(filePath, "utf8");
     const parsedConfig = JSON.parse(config);

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-import * as updateNotifier from "update-notifier";
-import * as fs from 'fs';
+import updateNotifier from "update-notifier";
+import fs from 'fs';
 const pkg = JSON.parse(`${fs.readFileSync('./package.json')}`);
-updateNotifier.default({ pkg }).notify();
+updateNotifier({ pkg }).notify();
+console.log('Auto-update ran');
 //# sourceMappingURL=autoupdate.js.map

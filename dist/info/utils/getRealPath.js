@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import fs from "fs";
 function getRealPath(path) {
     try {
         return fs.realpathSync(path);

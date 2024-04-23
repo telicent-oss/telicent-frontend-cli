@@ -2,11 +2,12 @@
 
 // Import Commander and other necessary modules
 import { program } from 'commander';
-import config from '../config.js';
+import config from '../config/index.js';
 import info from '../info/info.js';
 import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
 import { PACKAGE_JSON } from '../constants.js';
+import noise from '../noise/index.js';
 
 
 
@@ -26,6 +27,11 @@ program
   .description('Show current directory ./tefe.config.json')
   .option('--init', 'Try create ./tefe.config.json')
   .action(config);
+program
+  .command('noise')
+  .description('Woof (default) or meow')
+  .option('--meow', 'specify meow')
+  .action(noise);
 
 // Parse and execute the commands
 program.parse(process.argv);
