@@ -23,7 +23,7 @@ yarn add @telicent-oss/telicent-frontend-cli
 
 To test:
 ```sh
-tefe version # or `yarn tefe version`
+yarn tefe version # or `tefe version`
 ```
 
 ## Usage
