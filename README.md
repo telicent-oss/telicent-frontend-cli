@@ -18,12 +18,12 @@ And perhaps if we add globally-useful dev-scripts, we end up using this as a glo
 # Install within a package
 cd <npm package directory>;
 yarn add @telicent-oss/telicent-frontend-cli
-# IMPORTANT: If you use `yarn` to install locally, manually prefix with "yarn" e.g. `yarn tefe`
+# IMPORTANT: If you use `yarn` to install in local package, prefix with "yarn" (e.g. `yarn tefe`) to ensure you don't use a globally installed tefe
 ```
 
 To test:
 ```sh
-yarn tefe version # or `tefe version`
+yarn tefe version # or `tefe version` for global version
 ```
 
 ## Usage
