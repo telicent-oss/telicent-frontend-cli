@@ -96,7 +96,7 @@ yarn global link @telicent-oss/telicent-frontend-cli
    - Else, try to automate errors/warnings
    - Else, create some feedback to help the next idea
 
-**Inter-operability**: Bias for CLI scripts runninng (consistently) on as many different platforms as possible — including stripped down CI machines. So:
+**Inter-operability**: Bias for CLI scripts running (consistently) on as many different platforms as possible — including stripped down CI machines. So:
 * avoid non-node code
 * target node 16
 * do not bundle, to allow easy ssh-debugging/editing of scripts on CI machines
