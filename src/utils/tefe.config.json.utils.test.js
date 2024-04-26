@@ -59,7 +59,7 @@ describe("TEFE JSON Functions", () => {
       fs.existsSync.mockReturnValue(true);
 
       expect(() => createTefeJson()).toThrow(
-        `Can not create already existing: ${TEFE_CONFIG}`
+        `Cannot create already existing: ${TEFE_CONFIG}`
       );
     });
 
