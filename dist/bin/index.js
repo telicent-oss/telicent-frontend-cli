@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Import Commander and other necessary modules
 import { program } from 'commander';
-import config from '../config/index.js';
+import { config } from '../config/config.js';
 import info from '../info/info.js';
 import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
@@ -17,7 +17,7 @@ program
     .action(info);
 program
     .command('config')
-    .description('Show current directory ./tefe.config.json')
+    .description('Show current directoryʼs ./tefe.config.json')
     .option('--init', 'Try create ./tefe.config.json')
     .action(config);
 program

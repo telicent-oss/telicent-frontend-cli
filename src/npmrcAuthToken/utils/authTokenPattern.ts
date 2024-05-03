@@ -1,1 +1,1 @@
-export const authTokenPattern = /(.*):_authToken=(.*)/i;
+export const authTokenPattern = /(.*):_authToken=(.*)/i

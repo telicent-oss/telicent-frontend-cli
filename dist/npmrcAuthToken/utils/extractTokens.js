@@ -1,5 +1,5 @@
-import { authTokenPattern } from "./authTokenPattern.js";
-import { mask } from "./mask.js";
+import { authTokenPattern } from './authTokenPattern.js';
+import { mask } from './mask.js';
 /**
  * MOTIVATION reading authToken from .npmrc
  *
@@ -8,17 +8,15 @@ import { mask } from "./mask.js";
  *
  * TODO extractTokens replace with script that reads (and cleans) `yarn config list`
  * WHEN we care deeply about robustly resolving the correct value (we don't now, as its a local-only tool))
- * @param {string} data - Configuration data as a multiline string.
- * @returns {Object} Dictionary of keys and their corresponding values.
  */
 export function extractTokens(data, pattern = authTokenPattern) {
     const tokens = {};
-    const lines = data.split("\n");
+    const lines = data.split('\n');
     lines.forEach((line) => {
         const cleanLine = line.trim();
         if (cleanLine &&
-            !cleanLine.startsWith("#") &&
-            cleanLine.toLocaleLowerCase().includes(":_authtoken=")) {
+            !cleanLine.startsWith('#') &&
+            cleanLine.toLocaleLowerCase().includes(':_authtoken=')) {
             // Ignore comments and empty lines
             const match = cleanLine.match(pattern);
             if (match) {

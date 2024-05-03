@@ -1,32 +1,29 @@
-import * as fs from "fs";
-import { extractTokens } from "./utils/extractTokens.js";
-import { findFile } from "./utils/findFile.js";
-import { mask } from "./utils/mask.js";
+import * as fs from 'fs';
+import { extractTokens } from './utils/extractTokens.js';
+import { findFile } from './utils/findFile.js';
+import { mask } from './utils/mask.js';
 /**
  * Logs or masks npmrc tokens based on environment setting.
- * @param {string} npmrcPath - Path to .npmrc file.
- * @param {string} [tokenKey] - Specific token key to log.
  */
 const getAllOrSpecificToken = (npmrcPath, specific) => {
-    const npmrcContent = fs.readFileSync(npmrcPath, "utf8");
+    const npmrcContent = fs.readFileSync(npmrcPath, 'utf8');
     const tokens = extractTokens(npmrcContent);
-    if (specific && tokens.hasOwnProperty(specific)) {
-        console.log(process.env.UNMASK === "true" ? tokens[specific] : mask(tokens[specific]));
+    if (specific && tokens[specific]) {
+        console.log(process.env.UNMASK === 'true' ? tokens[specific] : mask(tokens[specific]));
     }
     else {
-        console.log(JSON.stringify(tokens, (_, v) => typeof v === "string" ? mask(v) : v, 2));
+        console.log(JSON.stringify(tokens, (_, v) => (typeof v === 'string' ? mask(v) : v), 2));
     }
 };
 /**
  * Main function to retrieve and handle tokens from .npmrc.
  * Allows securely accessing config values without embedding secrets in scripts.
- * @param {string} [tokenKey] - Optional specific token key to retrieve.
  */
 const npmrcAuthToken = (tokenKey) => {
     try {
         const npmrcPath = findFile();
         if (!npmrcPath) {
-            console.error("No .npmrc file found.");
+            console.error('No .npmrc file found.');
             process.exit(1);
         }
         getAllOrSpecificToken(npmrcPath, tokenKey);

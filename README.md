@@ -39,7 +39,7 @@ Options:
 Commands:
   version                  read version
   info                     Get context to help CLI developers
-  config [options]         Show current directory ./tefe.config.json
+  config [options]         Show current directoryʼs ./tefe.config.json
   npmrc-authtoken [value]  Fetch NPM configuration tokens form the nearest
                            npmrc file (WARNING: Has limitations see
                            extractTokens.ts TODO)

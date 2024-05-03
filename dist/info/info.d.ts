@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-declare const info: (...args: any[]) => void;
+import { Command } from 'commander';
+declare const info: (options: Record<string, unknown>, _command: Command) => void;
 export default info;

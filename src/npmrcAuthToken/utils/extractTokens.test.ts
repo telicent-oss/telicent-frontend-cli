@@ -1,28 +1,28 @@
-import { vi, test, expect } from "vitest";
-import { extractTokens } from "./extractTokens";
-import * as authTokenModule from "./authTokenPattern";
+import { vi, test, expect } from 'vitest'
+import { extractTokens } from './extractTokens'
+import * as authTokenModule from './authTokenPattern'
 
 test(`extractTokens`, () => {
   expect(
-    "//npm.dev-tools.company.live/:_authtoken=<value>"
+    '//npm.dev-tools.company.live/:_authtoken=<value>'
       .match(authTokenModule.authTokenPattern)
-      ?.slice(1)
+      ?.slice(1),
   ).toMatchInlineSnapshot(`
     [
       "//npm.dev-tools.company.live/",
       "<value>",
     ]
-  `);
+  `)
   expect(
-    "//npm.fontawesome.com/:_authtoken=<value>"
+    '//npm.fontawesome.com/:_authtoken=<value>'
       .match(authTokenModule.authTokenPattern)
-      ?.slice(1)
+      ?.slice(1),
   ).toMatchInlineSnapshot(`
     [
       "//npm.fontawesome.com/",
       "<value>",
     ]
-  `);
+  `)
 
   expect(
     extractTokens(`
@@ -40,22 +40,22 @@ fetch-retry-mintimeout=<value1>
 always-auth=<value>
 fetch-retry-maxtimeout=<value2>
 fetch-retry-mintimeout=<value2>
-`)
+`),
   ).toMatchInlineSnapshot(`
     {
       "//npm.fontawesome.com/": "<value>",
       "//npm.pkg.github.com/": "<value2>",
     }
-  `);
-});
+  `)
+})
 
-test("Test code that is intended to be unreachable ", () => {
+test('Test code that is intended to be unreachable ', () => {
   // Test unreachable code
   const forceNoMatch = /$^/
   expect(() =>
-    extractTokens(`username:_authToken=`, forceNoMatch)
+    extractTokens(`username:_authToken=`, forceNoMatch),
   ).toThrowErrorMatchingInlineSnapshot(
-    `[Error: Warning: Unable to parse line: 'user****************']`
-  );
-  vi.resetModules();
-});
+    `[Error: Warning: Unable to parse line: 'user****************']`,
+  )
+  vi.resetModules()
+})

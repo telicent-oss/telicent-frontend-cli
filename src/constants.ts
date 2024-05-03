@@ -1,1 +1,1 @@
-export const PACKAGE_JSON =  "../../package.json";
+export const PACKAGE_JSON = '../../package.json'

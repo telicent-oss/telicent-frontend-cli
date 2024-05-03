@@ -1,2 +1,4 @@
 # TODO going to simply leave the diff
+yarn lint
+yarn format
 node ./scripts/updateReadmeWithTefeHelpCommand.js
