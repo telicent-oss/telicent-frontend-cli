@@ -2,7 +2,7 @@
 
 import fs from "fs";
 import formatJsonFile from "../../utils/formatJsonFile.js";
-import tryCatch from "../../utils/tryCatch.js";
+
 import {
   getTefeJson,
   TEFE_CONFIG,

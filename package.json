@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1-dev3.0",
   "scripts": {
-    "build": "tsc && chmod +x ./dist/bin/index.js",
+    "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/index.js",
     "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",

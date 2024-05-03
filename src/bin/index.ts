@@ -7,12 +7,7 @@ import info from '../info/info.js';
 import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
 import { PACKAGE_JSON } from '../constants.js';
-import barrel from '../barrel/index.js';
-import noise from '../noise/index.js';
 import npmrcAuthToken from '../npmrcAuthToken/index.js';
-
-
-
 
 program
   .command('version')
@@ -38,7 +33,6 @@ program
 
 // Parse and execute the commands
 program.parse(process.argv);
-
 
 process.on('uncaughtException', (err) => {
   console.error(err);
