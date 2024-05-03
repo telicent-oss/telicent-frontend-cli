@@ -5,7 +5,7 @@ import getRealPath from './utils/getRealPath.js'
 import checkNpmContext from './utils/checkNpmContext.js'
 import { PACKAGE_JSON } from '../constants.js'
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js'
-import { Command } from 'commander'
+import type { Command } from 'commander'
 
 const info: (
   options: Record<string, unknown>,

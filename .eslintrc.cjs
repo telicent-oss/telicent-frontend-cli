@@ -18,9 +18,11 @@ module.exports = {
       },
     },
   ],
+  plugins: ['import'],
   rules: {
     // e.g., "@typescript-eslint/explicit-function-return-type": "off",
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    "@typescript-eslint/consistent-type-imports": ["error", { "prefer": "type-imports" }]
   },
   env: {
     node: true, // Defines global variables that are predefined

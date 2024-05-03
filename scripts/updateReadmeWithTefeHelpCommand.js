@@ -31,7 +31,7 @@ const updateReadme = async () => {
     const helpOutput = await getTefeHelp();
 
 
-    const formattedOutput = "```sh\n" + helpOutput + "\n```";
+    const formattedOutput = "```\n" + helpOutput + "\n```";
 
     // Read README.md
     const readmePath = path.join(__dirname, "../README.md");
