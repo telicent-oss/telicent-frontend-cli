@@ -35,5 +35,8 @@
     "husky": "9.0.11",
     "typescript": "^5.4.5",
     "vitest": "1.4.0"
+  },
+  "engine": {
+    "node": "20.8.1"
   }
 }
