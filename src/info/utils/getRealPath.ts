@@ -1,13 +1,12 @@
-import fs from "fs";
+import * as fs from 'fs'
 
-function getRealPath(path:string) {
+function getRealPath(path: string) {
   try {
-    return fs.realpathSync(path);
+    return fs.realpathSync(path)
   } catch (error) {
     // If there's an error resolving the path, return 'unknown'
-    return `Unknown`;
+    return `Unknown`
   }
 }
 
-export default getRealPath;
-
+export default getRealPath

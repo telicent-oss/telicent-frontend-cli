@@ -34,14 +34,16 @@ All commands are available via `tefe help`:
 Usage: tefe [options] [command]
 
 Options:
-  -h, --help        display help for command
+  -h, --help               display help for command
 
 Commands:
-  version           read version
-  info              Get context to help CLI developers
-  config [options]  Show current directory ./tefe.config.json
-  noise [options]   Woof (default) or meow
-  help [command]    display help for command
+  version                  read version
+  info                     Get context to help CLI developers
+  config [options]         Show current directoryʼs ./tefe.config.json
+  npmrc-authtoken [value]  Fetch NPM configuration tokens form the nearest
+                           npmrc file (WARNING: Has limitations see
+                           extractTokens.ts TODO)
+  help [command]           display help for command
 
 ```
 <!-- /help -->

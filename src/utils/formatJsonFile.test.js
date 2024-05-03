@@ -26,7 +26,7 @@ describe("formatJsonFile function", () => {
 
     const filePath = "invalid.json";
     expect(() => formatJsonFile(filePath)).toThrowErrorMatchingInlineSnapshot(
-      `[SyntaxError: Unexpected token i in JSON at position 0]`
+      `[SyntaxError: Unexpected token 'i', "invalid json" is not valid JSON]`
     );
   });
 

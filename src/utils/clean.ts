@@ -1,2 +1,2 @@
-const clean = (str: string) => str.replace(/\/Users\/[^/]+\//g, "~/");
-export default clean;
+const clean = (str: string) => str.replace(/\/Users\/[^/]+\//g, '~/')
+export default clean

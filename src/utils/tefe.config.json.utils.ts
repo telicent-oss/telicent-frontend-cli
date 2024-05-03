@@ -1,34 +1,34 @@
-import fs from "fs";
-import { PACKAGE_JSON } from "../constants.js";
-import { readJsonAtInternal } from "./readJsonAtInternal.js";
-export const TEFE_CONFIG = "./tefe.config.json";
+import * as fs from 'fs'
+import { PACKAGE_JSON } from '../constants.js'
+import { readJsonAtInternal } from './readJsonAtInternal.js'
+export const TEFE_CONFIG = './tefe.config.json'
 
 export const getTefeJson = () => {
   if (fs.existsSync(TEFE_CONFIG)) {
-    const text = fs.readFileSync(TEFE_CONFIG);
-    const json = JSON.parse(`${text}`);
-    return json;
+    const text = fs.readFileSync(TEFE_CONFIG)
+    const json = JSON.parse(`${text}`)
+    return json
   }
-  return undefined;
-};
+  return undefined
+}
 
 export const checkTefeJson = () => {
-  const json = getTefeJson();
+  const json = getTefeJson()
   if (json) {
-    if (typeof json.version !== "string") {
-      throw Error('Expected "version" (string) field in');
+    if (typeof json.version !== 'string') {
+      throw Error('Expected "version" (string) field in')
     }
-    return true;
+    return true
   }
-  throw Error(`Perhaps file not created? could not find: ${TEFE_CONFIG}`);
-};
+  throw Error(`Perhaps file not created? could not find: ${TEFE_CONFIG}`)
+}
 
 export const createTefeJson = () => {
   if (getTefeJson()) {
-    throw Error(`Cannot create already existing: ${TEFE_CONFIG}`);
+    throw Error(`Cannot create already existing: ${TEFE_CONFIG}`)
   }
 
-  const json = readJsonAtInternal(PACKAGE_JSON);
+  const json = readJsonAtInternal(PACKAGE_JSON)
   fs.writeFileSync(
     TEFE_CONFIG,
     JSON.stringify(
@@ -36,9 +36,9 @@ export const createTefeJson = () => {
         version: json.version,
       },
       null,
-      2
+      2,
     ),
-    `utf-8`
-  );
-  return true;
-};
+    `utf-8`,
+  )
+  return true
+}

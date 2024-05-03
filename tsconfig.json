@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",                 // Node 16 supports ES2020 features
-    "module": "esnext",                 // Use the latest module standard that Node supports
+    "module": "ESNext",                 // Use the latest module standard that Node supports
     "moduleResolution": "node",         // Use Node.js style module resolution
     "esModuleInterop": true,            // Enable interop between default and named imports
     "outDir": "./dist",                 // Output directory for compiled files
@@ -16,7 +16,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
   ],
   "exclude": [
     "node_modules",
