@@ -28,7 +28,7 @@ program
 program
   .command('npmrc-authtoken')
   .description(
-    'Fetch NPM configuration tokens form the nearest npmrc file (WARNING: Has limitations see extractTokens.ts TODO)',
+    'Fetch NPM configuration tokens from the nearest npmrc file (WARNING: Has limitations see extractTokens.ts TODO)',
   )
   .argument(
     '[value]',
