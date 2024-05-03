@@ -22,7 +22,7 @@ export const checkTefeJson = () => {
 };
 export const createTefeJson = () => {
     if (getTefeJson()) {
-        throw Error(`Can not create already existing: ${TEFE_CONFIG}`);
+        throw Error(`Cannot create already existing: ${TEFE_CONFIG}`);
     }
     const json = readJsonAtInternal(PACKAGE_JSON);
     fs.writeFileSync(TEFE_CONFIG, JSON.stringify({

@@ -1,13 +1,11 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import { dirname } from "./dirname.js";
 
 // Reads a JSON file from the directory where the CLI package is located
 export const readJsonAtInternal = (jsonPath: string) => {
   try {
-    const fullPath = path.resolve(__dirname, jsonPath);
+    const fullPath = path.resolve(dirname, jsonPath);
     const text = fs.readFileSync(fullPath, "utf8");
     return JSON.parse(text);
   } catch (error) {

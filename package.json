@@ -4,6 +4,7 @@
   "version": "0.0.1-dev3",
   "scripts": {
     "build": "tsc && chmod +x ./dist/bin/index.js",
+    "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",
     "test:watch": "vitest",
@@ -28,6 +29,7 @@
     "update-notifier": "6.0.2"
   },
   "devDependencies": {
+    "chokidar-cli": "3.0.0",
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "1.4.0",
     "husky": "9.0.11",
