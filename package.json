@@ -1,7 +1,7 @@
 {
   "name": "@telicent-oss/telicent-frontend-cli",
   "type": "module",
-  "version": "0.0.1-dev3",
+  "version": "0.0.1-dev3.0",
   "scripts": {
     "build": "tsc && chmod +x ./dist/bin/index.js",
     "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
@@ -29,9 +29,9 @@
     "update-notifier": "6.0.2"
   },
   "devDependencies": {
-    "chokidar-cli": "3.0.0",
     "@types/node": "^20.12.7",
     "@vitest/coverage-v8": "1.4.0",
+    "chokidar-cli": "3.0.0",
     "husky": "9.0.11",
     "typescript": "^5.4.5",
     "vitest": "1.4.0"
