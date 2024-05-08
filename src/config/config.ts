@@ -1,4 +1,4 @@
-import { Command } from 'commander' // Import Commander types if available
+import type { Command } from 'commander' // Import Commander types if available
 import formatJsonFile from '../utils/formatJsonFile.js'
 import {
   createTefeJson,

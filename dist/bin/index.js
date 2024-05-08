@@ -22,7 +22,7 @@ program
     .action(config);
 program
     .command('npmrc-authtoken')
-    .description('Fetch NPM configuration tokens form the nearest npmrc file (WARNING: Has limitations see extractTokens.ts TODO)')
+    .description('Fetch NPM configuration tokens from the nearest npmrc file (WARNING: Has limitations see extractTokens.ts TODO)')
     .argument('[value]', 'The token key to fetch. Requires env/script var UNMASK=true to output actual value')
     .action(npmrcAuthToken);
 // Parse and execute the commands

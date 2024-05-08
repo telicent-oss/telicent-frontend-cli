@@ -30,7 +30,7 @@ yarn tefe version # or `tefe version` for global version
 
 All commands are available via `tefe help`:
 <!-- help -->
-```sh
+```
 Usage: tefe [options] [command]
 
 Options:
@@ -40,7 +40,7 @@ Commands:
   version                  read version
   info                     Get context to help CLI developers
   config [options]         Show current directoryʼs ./tefe.config.json
-  npmrc-authtoken [value]  Fetch NPM configuration tokens form the nearest
+  npmrc-authtoken [value]  Fetch NPM configuration tokens from the nearest
                            npmrc file (WARNING: Has limitations see
                            extractTokens.ts TODO)
   help [command]           display help for command
