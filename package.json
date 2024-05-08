@@ -24,6 +24,10 @@
   ],
   "author": "",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telicent-oss/telicent-frontend-cli"
+  },
   "dependencies": {
     "@commander-js/extra-typings": "12.0.1",
     "@types/update-notifier": "^6.0.8",
