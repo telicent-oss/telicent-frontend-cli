@@ -1,7 +1,7 @@
 {
   "name": "@telicent-oss/telicent-frontend-cli",
   "type": "module",
-  "version": "0.0.1-dev3.4",
+  "version": "1.0.0",
   "scripts": {
     "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/index.js",
     "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
