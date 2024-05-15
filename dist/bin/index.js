@@ -7,6 +7,8 @@ import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
 import { PACKAGE_JSON } from '../constants.js';
 import npmrcAuthToken from '../npmrcAuthToken/index.js';
+import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js';
+import { hookPreinstall } from '../hookPreinstall/hookPreinstall.js';
 program
     .command('version')
     .description('read version')
@@ -15,6 +17,14 @@ program
     .command('info')
     .description('Get context to help CLI developers')
     .action(info);
+program
+    .command('hook-precommit')
+    .description('Telicent frontend precommit hook')
+    .action(hookPrecommit);
+program
+    .command('hook-preinstall')
+    .description('Telicent frontend preinstall hook')
+    .action(hookPreinstall);
 program
     .command('config')
     .description('Show current directoryʼs ./tefe.config.json')

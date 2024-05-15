@@ -1,0 +1,1 @@
+{"version":3,"file":"hookPreinstall.js","sourceRoot":"","sources":["../../src/hookPreinstall/hookPreinstall.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,8BAA8B,EAAE,MAAM,2CAA2C,CAAC;AAC3F,OAAO,EAAE,iBAAiB,EAAE,MAAM,8BAA8B,CAAC;AAEjE,MAAM,CAAC,MAAM,cAAc,GAAG,GAAS,EAAE;IACvC,8BAA8B,EAAE,CAAA;IAChC,iBAAiB,EAAE,CAAA;AACrB,CAAC,CAAA"}
