@@ -3,11 +3,14 @@
 // Import Commander and other necessary modules
 import { program } from 'commander'
 import { config } from '../config/config.js'
+
 import info from '../info/info.js'
 import '../autoupdate.js'
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js'
 import { PACKAGE_JSON } from '../constants.js'
 import npmrcAuthToken from '../npmrcAuthToken/index.js'
+import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js'
+import { hookPreinstall } from '../hookPreinstall/hookPreinstall.js'
 
 program
   .command('version')
@@ -18,6 +21,16 @@ program
   .command('info')
   .description('Get context to help CLI developers')
   .action(info)
+
+program
+  .command('hook-precommit')
+  .description('Telicent frontend precommit hook')
+  .action(hookPrecommit)
+
+program
+  .command('hook-preinstall')
+  .description('Telicent frontend preinstall hook')
+  .action(hookPreinstall)
 
 program
   .command('config')

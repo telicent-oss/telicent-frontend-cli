@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/index.js",
-    "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
+    "build:watch": "chokidar 'src/**/*.ts' -c 'yarn build'",
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",
     "test:watch": "vitest",
@@ -32,7 +32,9 @@
     "@commander-js/extra-typings": "12.0.1",
     "@types/update-notifier": "^6.0.8",
     "commander": "12.0.0",
-    "update-notifier": "6.0.2"
+    "memfs": "4.9.2",
+    "update-notifier": "6.0.2",
+    "yaml": "2.4.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
