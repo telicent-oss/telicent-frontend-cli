@@ -12,7 +12,8 @@
     "format": "prettier --write 'src/**/*.ts'",
     "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
     "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link",
-    "publish:prerelease": "yarn version --prerelease && git push && git push --tags",
+    "push": "git push && git push --tags",
+    "publish:prerelease": "yarn version --prerelease && yarn push",
     "publish:p": "yarn publish:prerelease"
   },
   "bin": {
