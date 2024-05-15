@@ -11,7 +11,9 @@
     "lint": "eslint 'src/**/*.ts' --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
-    "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link"
+    "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link",
+    "bump:prerelease": "yarn version --prerelease && git push && git push --tags",
+    "bump:p": "yarn bump:prerelease"
   },
   "bin": {
     "tefe": "./dist/bin/index.js"
