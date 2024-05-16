@@ -1,1 +1,1 @@
-{"version":3,"file":"hookPrecommit.js","sourceRoot":"","sources":["../../src/hookPrecommit/hookPrecommit.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,wBAAwB,EAAE,MAAM,qCAAqC,CAAC;AAE/E,MAAM,CAAC,MAAM,aAAa,GAAG,GAAS,EAAE;IACtC,wBAAwB,EAAE,CAAC;AAC7B,CAAC,CAAA"}
+{"version":3,"file":"hookPrecommit.js","sourceRoot":"","sources":["../../src/hookPrecommit/hookPrecommit.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,wBAAwB,EAAE,MAAM,qCAAqC,CAAA;AAE9E,MAAM,CAAC,MAAM,aAAa,GAAG,GAAS,EAAE;IACtC,wBAAwB,EAAE,CAAA;AAC5B,CAAC,CAAA"}

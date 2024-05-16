@@ -1,4 +1,4 @@
-import { writePullRequestTemplate } from "./check/writePullRequestTemplate.js";
+import { writePullRequestTemplate } from './check/writePullRequestTemplate.js';
 export const hookPrecommit = () => {
     writePullRequestTemplate();
 };

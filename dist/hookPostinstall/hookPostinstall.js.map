@@ -1,0 +1,1 @@
+{"version":3,"file":"hookPostinstall.js","sourceRoot":"","sources":["../../src/hookPostinstall/hookPostinstall.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,8BAA8B,EAAE,MAAM,2CAA2C,CAAA;AAC1F,OAAO,EAAE,iBAAiB,EAAE,MAAM,8BAA8B,CAAA;AAEhE,MAAM,CAAC,MAAM,eAAe,GAAG,GAAS,EAAE;IACxC,8BAA8B,EAAE,CAAA;IAChC,iBAAiB,EAAE,CAAA;AACrB,CAAC,CAAA"}

@@ -5,7 +5,7 @@ const CMD = 'tefe hook-precommit';
 const col = {
     ACTION: c.redBright(`USER ACTION NEEDED`),
     CMD: c.whiteBright(CMD),
-    PRECOMMIT: c.whiteBright(PRECOMMIT)
+    PRECOMMIT: c.whiteBright(PRECOMMIT),
 };
 export const tryWritePrecommit = () => {
     if (!fs.existsSync(PRECOMMIT)) {

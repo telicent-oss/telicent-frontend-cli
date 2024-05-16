@@ -8,7 +8,7 @@ import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
 import { PACKAGE_JSON } from '../constants.js';
 import npmrcAuthToken from '../npmrcAuthToken/index.js';
 import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js';
-import { hookPreinstall } from '../hookPreinstall/hookPreinstall.js';
+import { hookPostinstall } from '../hookPostinstall/hookPostinstall.js';
 program
     .command('version')
     .description('read version')
@@ -22,9 +22,9 @@ program
     .description('Telicent frontend precommit hook')
     .action(hookPrecommit);
 program
-    .command('hook-preinstall')
-    .description('Telicent frontend preinstall hook')
-    .action(hookPreinstall);
+    .command('hook-postinstall')
+    .description('Telicent frontend postinstall hook')
+    .action(hookPostinstall);
 program
     .command('config')
     .description('Show current directoryʼs ./tefe.config.json')
