@@ -51,7 +51,7 @@ program
 
 // Parse and execute the commands
 try {
-  program.parse(process.argv);
+  program.parse(process.argv)
 } catch (error) {
   console.error(`Parse error ${error}`)
 }
