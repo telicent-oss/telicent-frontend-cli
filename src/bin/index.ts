@@ -50,9 +50,14 @@ program
   .action(npmrcAuthToken)
 
 // Parse and execute the commands
-program.parse(process.argv)
+try {
+  program.parse(process.argv);
+} catch (error) {
+  console.error(`Parse error ${error}`)
+}
 
-process.on('uncaughtException', (err) => {
-  console.error(err)
+
+process.on('uncaughtException', (error) => {
+  console.error(`uncaughtException ${error}`)
   process.exit(1)
 })

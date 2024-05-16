@@ -12,6 +12,9 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const getTefeHelp = () => {
   return new Promise((resolve, reject) => {
     exec("tefe help", (error, stdout, stderr) => {
+      if (stdout) {
+        console.log(`stdout: ${stdout}`)
+      }
       if (error) {
         reject(`Error: ${error.message}`);
         return;

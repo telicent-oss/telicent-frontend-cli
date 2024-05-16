@@ -36,9 +36,14 @@ program
     .argument('[value]', 'The token key to fetch. Requires env/script var UNMASK=true to output actual value')
     .action(npmrcAuthToken);
 // Parse and execute the commands
-program.parse(process.argv);
-process.on('uncaughtException', (err) => {
-    console.error(err);
+try {
+    program.parse(process.argv);
+}
+catch (error) {
+    console.error(`Parse error ${error}`);
+}
+process.on('uncaughtException', (error) => {
+    console.error(`uncaughtException ${error}`);
     process.exit(1);
 });
 //# sourceMappingURL=index.js.map
