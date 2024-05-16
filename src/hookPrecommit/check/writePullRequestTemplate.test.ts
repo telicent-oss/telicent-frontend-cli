@@ -38,7 +38,7 @@ describe('writePullRequestTemplate Functionality', () => {
     vol.mkdirSync('/local', { recursive: true })
     vol.mkdirSync('/local/.github', { recursive: true })
     vol.writeFileSync(
-      '/local/.github/PULL_REQUEST_TEMPLATE',
+      '/local/.github/pull_request_template.md',
       'Local Template Content',
     )
 
@@ -52,22 +52,22 @@ describe('writePullRequestTemplate Functionality', () => {
     exitSpy.mockClear()
   })
 
-  it('creates PULL_REQUEST_TEMPLATE if it does not exist', () => {
+  it('creates pull_request_template.md if it does not exist', () => {
     expect(() => writePullRequestTemplate()).toThrowErrorMatchingInlineSnapshot(
       `[Error: Process exit called]`,
     )
     expect(consoleOutput).toMatchInlineSnapshot(`
       [
-        "USER ACTION REQUIRED — Created: Expected .github/PULL_REQUEST_TEMPLATE to exist.",
+        "USER ACTION REQUIRED — Created: Expected .github/pull_request_template.md to exist.",
         "Please check diff and commit.",
       ]
     `)
   })
 
-  it('overwrites PULL_REQUEST_TEMPLATE if content does not match', () => {
+  it('overwrites pull_request_template.md if content does not match', () => {
     vol.mkdirSync('/outer/.github', { recursive: true })
     vol.writeFileSync(
-      '/outer/.github/PULL_REQUEST_TEMPLATE',
+      '/outer/.github/pull_request_template.md',
       'Different Content',
     )
     expect(() => writePullRequestTemplate()).toThrowErrorMatchingInlineSnapshot(
@@ -75,16 +75,16 @@ describe('writePullRequestTemplate Functionality', () => {
     )
     expect(consoleOutput).toMatchInlineSnapshot(`
       [
-        "USER ACTION REQUIRED — Overwritten: Expected .github/PULL_REQUEST_TEMPLATE to match @telicent-oss/telicent-frontend-cli's.",
+        "USER ACTION REQUIRED — Overwritten: Expected .github/pull_request_template.md to match @telicent-oss/telicent-frontend-cli's.",
         "Please check diff and commit.",
       ]
     `)
   })
 
-  it('does nothing if the PULL_REQUEST_TEMPLATE matches expected', () => {
+  it('does nothing if the pull_request_template.md matches expected', () => {
     vol.mkdirSync('/outer/.github', { recursive: true })
     vol.writeFileSync(
-      '/outer/.github/PULL_REQUEST_TEMPLATE',
+      '/outer/.github/pull_request_template.md',
       'Local Template Content',
     )
     expect(() => writePullRequestTemplate()).not.toThrow()
