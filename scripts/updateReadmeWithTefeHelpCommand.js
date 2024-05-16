@@ -11,10 +11,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Function to run the `tefe help` command and get the output
 const getTefeHelp = () => {
   return new Promise((resolve, reject) => {
-    exec("tefe help", (error, stdout, stderr) => {
-      if (stdout) {
-        console.log(`stdout: ${stdout}`)
-      }
+    exec("./dist/bin/tefe.js help", (error, stdout, stderr) => {
       if (error) {
         reject(`Error: ${error.message}`);
         return;

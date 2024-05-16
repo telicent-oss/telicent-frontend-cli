@@ -39,6 +39,8 @@ Options:
 Commands:
   version                  read version
   info                     Get context to help CLI developers
+  hook-precommit           Telicent frontend precommit hook
+  hook-postinstall         Telicent frontend postinstall hook
   config [options]         Show current directoryʼs ./tefe.config.json
   npmrc-authtoken [value]  Fetch NPM configuration tokens from the nearest
                            npmrc file (WARNING: Has limitations see

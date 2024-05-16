@@ -46,4 +46,4 @@ process.on('uncaughtException', (error) => {
     console.error(`uncaughtException ${error}`);
     process.exit(1);
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=tefe.js.map
