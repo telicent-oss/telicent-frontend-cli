@@ -3,11 +3,14 @@
 // Import Commander and other necessary modules
 import { program } from 'commander'
 import { config } from '../config/config.js'
+
 import info from '../info/info.js'
 import '../autoupdate.js'
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js'
 import { PACKAGE_JSON } from '../constants.js'
 import npmrcAuthToken from '../npmrcAuthToken/index.js'
+import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js'
+import { hookPostinstall } from '../hookPostinstall/hookPostinstall.js'
 
 program
   .command('version')
@@ -18,6 +21,16 @@ program
   .command('info')
   .description('Get context to help CLI developers')
   .action(info)
+
+program
+  .command('hook-precommit')
+  .description('Telicent frontend precommit hook')
+  .action(hookPrecommit)
+
+program
+  .command('hook-postinstall')
+  .description('Telicent frontend postinstall hook')
+  .action(hookPostinstall)
 
 program
   .command('config')
@@ -37,9 +50,13 @@ program
   .action(npmrcAuthToken)
 
 // Parse and execute the commands
-program.parse(process.argv)
+try {
+  program.parse(process.argv)
+} catch (error) {
+  console.error(`Parse error ${error}`)
+}
 
-process.on('uncaughtException', (err) => {
-  console.error(err)
+process.on('uncaughtException', (error) => {
+  console.error(`uncaughtException ${error}`)
   process.exit(1)
 })

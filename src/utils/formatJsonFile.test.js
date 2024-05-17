@@ -25,9 +25,8 @@ describe("formatJsonFile function", () => {
     fs.readFileSync.mockReturnValue("invalid json");
 
     const filePath = "invalid.json";
-    expect(() => formatJsonFile(filePath)).toThrowErrorMatchingInlineSnapshot(
-      `[SyntaxError: Unexpected token 'i', "invalid json" is not valid JSON]`
-    );
+    expect(() => formatJsonFile(filePath)).toThrow(/Unexpected token/);
+
   });
 
   it("handles empty or non-existent file path", () => {

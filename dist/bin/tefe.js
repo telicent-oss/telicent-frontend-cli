@@ -7,6 +7,8 @@ import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
 import { PACKAGE_JSON } from '../constants.js';
 import npmrcAuthToken from '../npmrcAuthToken/index.js';
+import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js';
+import { hookPostinstall } from '../hookPostinstall/hookPostinstall.js';
 program
     .command('version')
     .description('read version')
@@ -15,6 +17,14 @@ program
     .command('info')
     .description('Get context to help CLI developers')
     .action(info);
+program
+    .command('hook-precommit')
+    .description('Telicent frontend precommit hook')
+    .action(hookPrecommit);
+program
+    .command('hook-postinstall')
+    .description('Telicent frontend postinstall hook')
+    .action(hookPostinstall);
 program
     .command('config')
     .description('Show current directoryʼs ./tefe.config.json')
@@ -26,9 +36,14 @@ program
     .argument('[value]', 'The token key to fetch. Requires env/script var UNMASK=true to output actual value')
     .action(npmrcAuthToken);
 // Parse and execute the commands
-program.parse(process.argv);
-process.on('uncaughtException', (err) => {
-    console.error(err);
+try {
+    program.parse(process.argv);
+}
+catch (error) {
+    console.error(`Parse error ${error}`);
+}
+process.on('uncaughtException', (error) => {
+    console.error(`uncaughtException ${error}`);
     process.exit(1);
 });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=tefe.js.map

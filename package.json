@@ -1,20 +1,23 @@
 {
   "name": "@telicent-oss/telicent-frontend-cli",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1-dev.6",
   "scripts": {
-    "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/index.js",
-    "build:watch": "chokidar 'src/**/*.ts' -c 'tsc'",
+    "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/tefe.js",
+    "build:watch": "chokidar 'src/**/*.ts' -c 'yarn build'",
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",
     "test:watch": "vitest",
     "lint": "eslint 'src/**/*.ts' --fix",
     "format": "prettier --write 'src/**/*.ts'",
     "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
-    "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link"
+    "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link",
+    "push": "git push && git push --tags",
+    "publish:prerelease": "yarn version --prerelease && yarn push",
+    "publish:p": "yarn publish:prerelease"
   },
   "bin": {
-    "tefe": "./dist/bin/index.js"
+    "tefe": "./dist/bin/tefe.js"
   },
   "description": "A CLI for FE engineers",
   "main": "./src/index.js",
@@ -32,7 +35,9 @@
     "@commander-js/extra-typings": "12.0.1",
     "@types/update-notifier": "^6.0.8",
     "commander": "12.0.0",
-    "update-notifier": "6.0.2"
+    "memfs": "4.9.2",
+    "update-notifier": "6.0.2",
+    "yaml": "2.4.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
