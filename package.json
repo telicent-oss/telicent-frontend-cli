@@ -13,8 +13,8 @@
     "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
     "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link",
     "push": "git push && git push --tags",
-    "publish:prerelease": "yarn version --prerelease && yarn push",
-    "publish:p": "yarn publish:prerelease"
+    "bump:prerelease": "yarn version --prerelease && git push && git push --tags",
+    "bump:pre": "yarn bump:prerelease"
   },
   "bin": {
     "tefe": "./dist/bin/tefe.js"
