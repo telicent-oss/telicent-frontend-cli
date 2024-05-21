@@ -1,7 +1,7 @@
 {
   "name": "@telicent-oss/telicent-frontend-cli",
   "type": "module",
-  "version": "1.1.1-0",
+  "version": "1.1.1",
   "scripts": {
     "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/tefe.js",
     "build:watch": "chokidar 'src/**/*.ts' -c 'yarn build'",
@@ -12,7 +12,7 @@
     "format": "prettier --write 'src/**/*.ts'",
     "readme": "node ./scripts/updateReadmeWithTefeHelpCommand.js",
     "relink": "(yarn unlink || ./scripts/forceUnlink.cjs) && yarn link",
-    "push": "git push && git push --tags",
+    "bump": "yarn version && git push && git push --tags",
     "bump:prerelease": "yarn version --prerelease && git push && git push --tags",
     "bump:pre": "yarn bump:prerelease"
   },
