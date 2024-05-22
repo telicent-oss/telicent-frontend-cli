@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import updateNotifier from 'update-notifier';
-import * as fs from 'fs';
-const pkg = JSON.parse(`${fs.readFileSync('./package.json')}`);
-updateNotifier({ pkg }).notify();
+import { readJsonAtInternal } from './utils/readJsonAtInternal.js';
+import { PACKAGE_JSON } from './constants.js';
+const pkg = readJsonAtInternal(PACKAGE_JSON);
+const MIN = 1000 * 60;
+updateNotifier({ pkg, updateCheckInterval: 10 * MIN }).notify();
 //# sourceMappingURL=autoupdate.js.map
