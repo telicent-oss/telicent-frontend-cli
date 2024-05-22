@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.0...v1.1.1) (2024-05-22)
+
+
+### Bug Fixes
+
+* autoupdate ([#14](https://github.com/telicent-oss/telicent-frontend-cli/issues/14)) ([5083f0f](https://github.com/telicent-oss/telicent-frontend-cli/commit/5083f0f9ef6caee0ae48d4a7601de159a74586a6))
+
 ## [1.1.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.0.0...v1.1.0) (2024-05-17)
 
 
