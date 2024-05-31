@@ -43,7 +43,7 @@ For PR REVIEWER:
 1. Read the ticket & description
 2. [Review the code](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 3. Request any changes that are essential.
-4. Be mindful to reviewing existing code (even if slightly refactored)
+4. Avoid reviewing pre-PR logic
 5. For non-essential comments:
    - Use prefixes, e.g. "**nit:** change to Pascal case"
      - **nit:** small, non-essential change
