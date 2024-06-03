@@ -43,7 +43,8 @@ For PR REVIEWER:
 1. Read the ticket & description
 2. [Review the code](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 3. Request any changes that are essential.
-4. For non-essential comments:
+4. Avoid reviewing pre-PR logic
+5. For non-essential comments:
    - Use prefixes, e.g. "**nit:** change to Pascal case"
      - **nit:** small, non-essential change
      - **obs:** just an observation, doesn't affect the PR
@@ -52,7 +53,7 @@ For PR REVIEWER:
    - Use modifiers, e.g. "**obs**`[pr-owner-resolve]`: Jim is also editing this file"
      - `pr-author-resolve` PR author can resolve after reading
      - `pr-author-delete` (rare) delete after reading to avoid confusion
-5. try to add _at least_ a helpful comment per ~500 lines; less if the PR is already busy
+6. try to add _at least_ a helpful comment per ~500 lines; less if the PR is already busy
 
 For PR AUTHOR:
 
