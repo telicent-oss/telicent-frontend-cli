@@ -36,7 +36,7 @@
     "@types/update-notifier": "^6.0.8",
     "commander": "12.0.0",
     "memfs": "4.9.2",
-    "update-notifier": "6.0.2",
+    "update-notifier": "7.0.0",
     "yaml": "2.4.2"
   },
   "devDependencies": {
