@@ -55,14 +55,12 @@ Comment shorthand terms
 | **q**        | Question for PR author to answer                                               |
 | **assumption** | If correct, then no action required; Else, PR author replies with correction |
 | **idea**     | Suggestion to think about; No change required                                  |
-
-
 | **obs**      | Just an observation, doesn't affect the PR                                  |
 | | | 
 | | | 
-| **TAG**         |
-| `u-resolve` | PR author can resolve after reading                                  |
-| `u-delete`  | PR author can delete after reading (Rare; To avoid confusion)                       |
+| **Modifiers**         |
+| `[u-resolve]` | PR author can resolve after reading                                  |
+| `[u-delete]`  | PR author can delete after reading (Rare; To avoid confusion)                       |
 
 **Example Usage:**
 
