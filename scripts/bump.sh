@@ -31,9 +31,13 @@ if ! git diff-index --quiet HEAD --; then
   exit 1
 fi
 
+# Check git hook
+.husky/pre-commit
+.husky/pre-push
+
 # Generate changelog and bump version
 yarn changelog # Ensure this command includes necessary updates
-yarn version --new-version patch # Specify the version bump type (patch, minor, major, etc.)
+yarn version # Specify the version bump type (patch, minor, major, etc.)
 
 # Commit the changes
 git add CHANGELOG.md package.json
@@ -58,7 +62,12 @@ git add CHANGELOG.md package.json
 git commit -m "chore(release): update changelog"
 
 # Rename the temporary branch to a version-specific branch
-version_branch="version/$(node -e "console.log(require('./package.json').version)")"
+if [ "$PUSH" == true ]; then
+    version_branch="version/$(node -e "console.log(require('./package.json').version)")"
+else
+    version_branch="test-version/$(node -e "console.log(require('./package.json').version)")"
+fi
+
 git branch -m "$tmp_branch" "$version_branch"
 
 if [ "$PUSH" == true ]; then
