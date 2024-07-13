@@ -42,9 +42,14 @@ git checkout -b "$tmp_branch"
 
 # Generate changelog and bump version
 yarn changelog # Ensure this command includes necessary updates
-# Commit the changes
-git add CHANGELOG.md package.json
-git commit -m "chore(release): bump version and update changelog"
+# Check if there are changes in CHANGELOG.md and package.json
+if git diff --quiet --exit-code CHANGELOG.md package.json; then
+  echo "No changes in CHANGELOG.md or package.json, skipping commit."
+else
+  # Stage and commit the changes if there are any
+  git add CHANGELOG.md package.json
+  git commit -m "chore(release): bump version and update changelog"
+fi
 
 # Specify the version bump type (patch, minor, major, etc.)
 # Rename the temporary branch to a version-specific branch
@@ -55,7 +60,6 @@ else
     yarn version  --no-git-tag-version
     version_branch="test-version/$(node -e "console.log(require('./package.json').version)")"
 fi
-
 
 
 if [ "$PUSH" == true ]; then
