@@ -46,11 +46,13 @@ yarn changelog # Ensure this command includes necessary updates
 git add CHANGELOG.md package.json
 git commit -m "chore(release): bump version and update changelog"
 
-yarn version # Specify the version bump type (patch, minor, major, etc.)
+# Specify the version bump type (patch, minor, major, etc.)
 # Rename the temporary branch to a version-specific branch
 if [ "$PUSH" == true ]; then
+    yarn version
     version_branch="version/$(node -e "console.log(require('./package.json').version)")"
 else
+    yarn version  --no-git-tag-version
     version_branch="test-version/$(node -e "console.log(require('./package.json').version)")"
 fi
 
