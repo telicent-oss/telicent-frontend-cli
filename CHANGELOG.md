@@ -1,4 +1,4 @@
-## [1.1.11](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.11) (2024-07-13)
+## [1.1.12](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.12) (2024-07-13)
 
 
 ### Bug Fixes
