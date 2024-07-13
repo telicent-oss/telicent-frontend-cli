@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rm -rf ./dist && tsc && chmod +x ./dist/bin/tefe.js",
     "build:watch": "chokidar 'src/**/*.ts' -c 'yarn build'",
-    "changelog": "changelog generate",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "prepare": "yarn build && husky",
     "test": "vitest --watch=false",
     "test:watch": "vitest",
@@ -47,8 +47,8 @@
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "@vitest/coverage-v8": "1.4.0",
-    "changelog": "^1.4.2",
     "chokidar-cli": "3.0.0",
+    "conventional-changelog-cli": "^5.0.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
