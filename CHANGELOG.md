@@ -1,4 +1,8 @@
-## [1.1.7](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.7) (2024-07-13)
+## [1.1.9](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.8...v1.1.9) (2024-07-13)
+
+
+
+## [1.1.8](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.8) (2024-07-13)
 
 
 
