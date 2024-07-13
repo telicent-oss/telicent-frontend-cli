@@ -53,7 +53,7 @@ tmp_branch="temp$timestamp"
 git checkout -b "$tmp_branch"
 
 # Generate changelog again if needed and commit the changes
-yarn generate-changelog
+yarn changelog
 git add CHANGELOG.md package.json
 git commit -m "chore(release): update changelog"
 
