@@ -35,6 +35,11 @@ fi
 .husky/pre-commit
 .husky/pre-push
 
+# Create a temporary branch
+timestamp=$(date +%Y%m%d%H%M%S)
+tmp_branch="temp$timestamp"
+git checkout -b "$tmp_branch"
+
 # Generate changelog and bump version
 yarn changelog # Ensure this command includes necessary updates
 yarn version # Specify the version bump type (patch, minor, major, etc.)
@@ -51,10 +56,7 @@ else
   echo "Dry run: Changes committed locally but not pushed"
 fi
 
-# Create a temporary branch
-timestamp=$(date +%Y%m%d%H%M%S)
-tmp_branch="temp$timestamp"
-git checkout -b "$tmp_branch"
+
 
 # Generate changelog again if needed and commit the changes
 yarn changelog
