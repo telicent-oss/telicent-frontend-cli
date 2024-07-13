@@ -32,7 +32,7 @@ if ! git diff-index --quiet HEAD --; then
 fi
 
 # Generate changelog and bump version
-yarn generate-changelog # Ensure this command includes necessary updates
+yarn changelog # Ensure this command includes necessary updates
 yarn version --new-version patch # Specify the version bump type (patch, minor, major, etc.)
 
 # Commit the changes
