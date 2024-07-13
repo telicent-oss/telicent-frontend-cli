@@ -1,10 +1,11 @@
-## [1.1.11](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.11) (2024-07-13)
+## [1.1.12](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.3...v1.1.12) (2024-07-13)
 
 
 ### Bug Fixes
 
 * **bump:** changelog then version ([#27](https://github.com/telicent-oss/telicent-frontend-cli/issues/27)) ([2a63630](https://github.com/telicent-oss/telicent-frontend-cli/commit/2a63630c24b8427499de392423297dc82f3888f7))
 * **bump:** do not modify main ([#26](https://github.com/telicent-oss/telicent-frontend-cli/issues/26)) ([8feac7d](https://github.com/telicent-oss/telicent-frontend-cli/commit/8feac7dc342b9c89f8c0a2242be6c0bf8f306e91))
+* **bump:** handle no change ([#29](https://github.com/telicent-oss/telicent-frontend-cli/issues/29)) ([7b58c85](https://github.com/telicent-oss/telicent-frontend-cli/commit/7b58c85ea80ef2ea041e003ff5d2bede7de0ca40))
 * **scripts:** chmod +x ([#24](https://github.com/telicent-oss/telicent-frontend-cli/issues/24)) ([00b5f7e](https://github.com/telicent-oss/telicent-frontend-cli/commit/00b5f7e45112fd74f0787c3f42720abac81ad25c))
 
 
