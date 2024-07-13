@@ -42,11 +42,19 @@ git checkout -b "$tmp_branch"
 
 # Generate changelog and bump version
 yarn changelog # Ensure this command includes necessary updates
-yarn version # Specify the version bump type (patch, minor, major, etc.)
-
 # Commit the changes
 git add CHANGELOG.md package.json
 git commit -m "chore(release): bump version and update changelog"
+
+yarn version # Specify the version bump type (patch, minor, major, etc.)
+# Rename the temporary branch to a version-specific branch
+if [ "$PUSH" == true ]; then
+    version_branch="version/$(node -e "console.log(require('./package.json').version)")"
+else
+    version_branch="test-version/$(node -e "console.log(require('./package.json').version)")"
+fi
+
+
 
 if [ "$PUSH" == true ]; then
   # Push to main
@@ -63,12 +71,7 @@ yarn changelog
 git add CHANGELOG.md package.json
 git commit -m "chore(release): update changelog"
 
-# Rename the temporary branch to a version-specific branch
-if [ "$PUSH" == true ]; then
-    version_branch="version/$(node -e "console.log(require('./package.json').version)")"
-else
-    version_branch="test-version/$(node -e "console.log(require('./package.json').version)")"
-fi
+
 
 git branch -m "$tmp_branch" "$version_branch"
 
