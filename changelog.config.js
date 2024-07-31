@@ -15,4 +15,4 @@ module.exports = {
     'https://telicent-oss/telicent-frontend-cli/compare/{{previousTag}}...{{currentTag}}',
   issueUrlFormat: 'https://telicent-oss/telicent-frontend-cli/issues/{{id}}',
   userUrlFormat: 'https://github.com/{{user}}',
-}
+};

@@ -1,6 +1,7 @@
-import { describe, it, expect, vi } from 'vitest';
-import getRealPath from './getRealPath';
 import fs from 'fs';
+import { describe, expect, it, vi } from 'vitest';
+
+import getRealPath from './getRealPath';
 
 vi.mock('fs');
 
@@ -23,5 +24,4 @@ describe('getRealPath function', () => {
     const result = getRealPath(mockPath);
     expect(result).toBe('Unknown');
   });
-
 });
