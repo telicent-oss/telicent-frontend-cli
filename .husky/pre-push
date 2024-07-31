@@ -1,6 +1,7 @@
+#!/bin/sh
+
 set -e
+
+node ./scripts/updateReadmeWithTefeHelpCommand.js
 yarn test
 yarn build
-
-# TODO going to simply leave the diff
-node ./scripts/updateReadmeWithTefeHelpCommand.js
