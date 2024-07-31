@@ -59,6 +59,9 @@
     "vite-plugin-eslint": "1.8.1",
     "vitest": "1.4.0"
   },
+  "resolutions": {
+    "braces": "3.0.3"
+  },
   "engine": {
     "node": "20.8.1"
   }
