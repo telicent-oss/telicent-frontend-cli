@@ -1,50 +1,47 @@
-import fs from "fs";
-import os from "os";
-import { describe, it, expect, vi, beforeAll, afterAll } from "vitest";
-import checkNpmContext, { TEFE_CONFIG } from "./checkNpmContext";
-import * as getTefeJsonModule from "../../utils/tefe.config.json.utils";
-import * as readJsonAtInvokedModule from "../../utils/readJsonAtInvoked";
+import fs from 'fs';
+import os from 'os';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
-const printResult = (arr) => arr.map((list) => list.join(" ")).join(os.EOL);
+import * as readJsonAtInvokedModule from '../../utils/readJsonAtInvoked';
+import * as getTefeJsonModule from '../../utils/tefe.config.json.utils';
+import checkNpmContext, { TEFE_CONFIG } from './checkNpmContext';
 
-const getTefeJsonSpy = vi.spyOn(
-  getTefeJsonModule,
-  "getTefeJson"
-);
+const printResult = (arr) => arr.map((list) => list.join(' ')).join(os.EOL);
 
-const readJsonAtInvokedSpy = vi.spyOn(
-  readJsonAtInvokedModule,
-  "readJsonAtInvoked"
-)
+const getTefeJsonSpy = vi.spyOn(getTefeJsonModule, 'getTefeJson');
 
-vi.mock("fs");
-vi.mock("../../utils/readJsonAtInvoked", () => ({
+const readJsonAtInvokedSpy = vi.spyOn(readJsonAtInvokedModule, 'readJsonAtInvoked');
+
+vi.mock('fs');
+vi.mock('../../utils/readJsonAtInvoked', () => ({
   readJsonAtInvoked: vi.fn((modulePath) => {
-    if (modulePath.endsWith("package.json")) {
-      return { name: "TEFE", version: "123.345.456-test" };
+    if (modulePath.endsWith('package.json')) {
+      return { name: 'TEFE', version: '123.345.456-test' };
     } else if (modulePath.includes(TEFE_CONFIG)) {
-      return { version: "0.0.1-alpha"};
+      return { version: '0.0.1-alpha' };
     } else {
       throw new Error(`Module not found in ${modulePath}`);
     }
   }),
 }));
-vi.mock("../../utils/formatJsonFile", () => ({ default: vi.fn(() => "{ version: \"0.0.1-formatted\"}") }));
-vi.mock("../../utils/tefe.config.json.utils", () => ({
+vi.mock('../../utils/formatJsonFile', () => ({
+  default: vi.fn(() => '{ version: "0.0.1-formatted"}'),
+}));
+vi.mock('../../utils/tefe.config.json.utils', () => ({
   getTefeJson: vi.fn(),
-  TEFE_CONFIG: "./tefe.config.json",
+  TEFE_CONFIG: './tefe.config.json',
 }));
 
-describe("checkNpmContext function", () => {
+describe('checkNpmContext function', () => {
   let originalCwd;
   beforeAll(() => {
     originalCwd = process.cwd;
-    process.cwd = vi.fn(() => "/mocked/path");
+    process.cwd = vi.fn(() => '/mocked/path');
   });
   afterAll(() => {
     process.cwd = originalCwd;
   });
-  it("handles being inside an npm package without TEFE_CONFIG file", () => {
+  it('handles being inside an npm package without TEFE_CONFIG file', () => {
     fs.existsSync.mockReturnValue(true);
     getTefeJsonSpy.mockReturnValueOnce(false);
     const result = checkNpmContext();
@@ -57,7 +54,7 @@ describe("checkNpmContext function", () => {
         - has ./tefe.config.json: false"
     `);
   });
-  it("handles being inside an npm package with TEFE_CONFIG file", () => {
+  it('handles being inside an npm package with TEFE_CONFIG file', () => {
     fs.existsSync.mockReturnValue(true);
     getTefeJsonSpy.mockReturnValueOnce(true);
     const result = checkNpmContext();
@@ -71,14 +68,15 @@ describe("checkNpmContext function", () => {
     `);
   });
 
-  it("detects the TEFE package correctly", () => {
+  it('detects the TEFE package correctly', () => {
     readJsonAtInvokedSpy.mockImplementationOnce(
       vi.fn(() => ({
-        name: "@telicent-oss/telicent-frontend-cli",
-        version: "1.2.3-test",
-      }))
+        name: '@telicent-oss/telicent-frontend-cli',
+        version: '1.2.3-test',
+      })),
     );
     fs.existsSync.mockReturnValue(true);
+    /* eslint-disable max-len */ // Rationale: auto-generated
     expect(printResult(checkNpmContext())).toMatchInlineSnapshot(`
       "process.cwd(): /mocked/path
       Current dir: 
@@ -87,9 +85,10 @@ describe("checkNpmContext function", () => {
         - has tefe installed: false
         - has ./tefe.config.json: false"
     `);
+    /* eslint-enable max-len */
   });
 
-  it("handles not being in an npm package", () => {
+  it('handles not being in an npm package', () => {
     fs.existsSync.mockReturnValue(false);
     getTefeJsonSpy.mockReturnValueOnce(false);
     const result = checkNpmContext();

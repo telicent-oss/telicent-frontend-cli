@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
+
 import clean from './clean';
 
 describe('clean function', () => {
@@ -31,5 +32,4 @@ describe('clean function', () => {
     const input = 'JustAString';
     expect(clean(input)).toBe(input);
   });
-
 });

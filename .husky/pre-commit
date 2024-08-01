@@ -1,7 +1,5 @@
 #!/bin/sh
 set -e
 
-# TODO going to simply leave the diff
-yarn lint
-yarn format
+yarn lint:fix # TODO only on changed files
 node ./scripts/updateReadmeWithTefeHelpCommand.js
