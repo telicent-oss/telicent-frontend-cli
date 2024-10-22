@@ -10,6 +10,13 @@
 
 
 
+## [1.2.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.2.0...v1.2.1) (2024-10-22)
+
+
+### Bug Fixes
+
+* rollup CVE-2024-47068 ([#34](https://github.com/telicent-oss/telicent-frontend-cli/issues/34)) ([f84793b](https://github.com/telicent-oss/telicent-frontend-cli/commit/f84793b94937c3d0b7af5f19d774266c34915978))
+
 ## [1.2.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.1.4...v1.2.0) (2024-08-29)
 
 
