@@ -36,6 +36,8 @@ General guidance
 - Generally, approve a PR if it makes the system better, even if it's not perfect. — [Google: The Standard of Code Review](https://google.github.io/eng-practices/review/reviewer/standard.html)
 - The aim of both PR AUTHOR and PR REVIEWER is to get the code merged
 - Aim for consensus, defined as _everyone can live with the outcome_
+- PR with changes requires 2 approvals
+- PR with no changes requires 1 approvals
 
 For PR REVIEWER:
 
