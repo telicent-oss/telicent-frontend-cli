@@ -1,6 +1,8 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-CLI package to capture & propagate _Telicent frontend opinion_ on code, config & tools
+Simply - this package is a catch-all CLI for Telicent frontend. It is Basically scripts for our NPM packages
+
+A more complex definition: A CLI package to capture & propagate _Telicent frontend opinion_ on code, config & tools
 
 Install this in each npm package repository to provide:
 1. Some scripts to manually-trigger
