@@ -10,6 +10,19 @@
 
 
 
+## [1.3.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.2.1...v1.3.0) (2025-02-21)
+
+
+### Features
+
+* **docker scripts:** [ELDEVOPS-528] ([#39](https://github.com/telicent-oss/telicent-frontend-cli/issues/39)) ([e126c15](https://github.com/telicent-oss/telicent-frontend-cli/commit/e126c156a4172b7f44b359865d6b54cbffa60a9b))
+
+
+### Bug Fixes
+
+* **pull-request-template:** approvals ([#36](https://github.com/telicent-oss/telicent-frontend-cli/issues/36)) ([e7cb994](https://github.com/telicent-oss/telicent-frontend-cli/commit/e7cb994c13d82374aaadf6dc8ce64d7ef603972f))
+* **README.md:** intro tweak ([#37](https://github.com/telicent-oss/telicent-frontend-cli/issues/37)) ([2505044](https://github.com/telicent-oss/telicent-frontend-cli/commit/25050448653cc4762d5c6782890b02b8e288f64b))
+
 ## [1.2.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.2.0...v1.2.1) (2024-10-22)
 
 
