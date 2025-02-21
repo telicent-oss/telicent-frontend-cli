@@ -5,6 +5,7 @@ import { config } from '../config/config.js';
 import info from '../info/info.js';
 import '../autoupdate.js';
 import { readJsonAtInternal } from '../utils/readJsonAtInternal.js';
+import { runScript } from '../utils/runScript.js';
 import { PACKAGE_JSON } from '../constants.js';
 import npmrcAuthToken from '../npmrcAuthToken/index.js';
 import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js';
@@ -35,6 +36,21 @@ program
     .description('Fetch NPM configuration tokens from the nearest npmrc file (WARNING: Has limitations see extractTokens.ts TODO)')
     .argument('[value]', 'The token key to fetch. Requires env/script var UNMASK=true to output actual value')
     .action(npmrcAuthToken);
+program
+    .command('docker-build')
+    .description('Locally builds/scans FE App\'s Dockerfile')
+    .summary('docker build')
+    .action(runScript('../../scripts/docker/build'));
+program
+    .command('docker-run')
+    .description('Locally runs FE app\'s local container')
+    .summary('docker run')
+    .action(runScript('../../scripts/docker/run'));
+program
+    .command('docker-open')
+    .description('Locally opens FE app in local container')
+    .summary('open app in docker')
+    .action(runScript('../../scripts/docker/open'));
 // Parse and execute the commands
 try {
     program.parse(process.argv);

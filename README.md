@@ -47,6 +47,9 @@ Commands:
   npmrc-authtoken [value]  Fetch NPM configuration tokens from the nearest
                            npmrc file (WARNING: Has limitations see
                            extractTokens.ts TODO)
+  docker-build             docker build
+  docker-run               docker run
+  docker-open              open app in docker
   help [command]           display help for command
 
 ```
@@ -78,6 +81,8 @@ Commands:
 # To use (and develop) locally:
 git clone git@telicent-oss/telicent-frontend-cli
 cd telicent-frontend-cli
+yarn install
+yarn build
 yarn link # creates symlink
 # Sym-link/bin changes (e.g. package.json "bin" field) require:
 yarn unlink && yarn link
@@ -87,6 +92,7 @@ Then for every local package you wish to use this cli:
 ```sh
 cd <package>
 yarn link @telicent-oss/telicent-frontend-cli
+yarn tefe version
 ```
 
 Or to use the package globally:
