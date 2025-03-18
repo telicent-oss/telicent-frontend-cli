@@ -7,13 +7,10 @@ jobs:
   create-release-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Get branch name
-        id: branch-name
-        uses: tj-actions/branch-names@v7
 
       - name: Create release PR
         uses: google-github-actions/release-please-action@v3
-        if: ${{ steps.branch-name.outputs.current_branch == 'main' }}
+        if: ${{ github.ref_name == 'main' }}
         with:
           release-type: node
           package-name: "@telicent-oss/telicent-frontend-cli"
