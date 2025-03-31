@@ -3,12 +3,7 @@
 A CLI for Telicent engineers when creating [JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code)
 
 
-This CLI centralizes common commands and configuration, enforcing a consistent approach across projects. It auto-runs on the npm `postinstall` hook, and regularly checks and modifies project files—for example, ensuring a standardized GitHub PR template exists.
-
-
-## Background
-
-This tool is targeted at Telicent engineers working on Javascript code.
+This CLI centralizes common commands and configuration, enforcing a consistent approach across projects. It installed in a JavaScript project - it regularly checks and modifies project files — for example, ensuring a standardized GitHub PR template exists.
 
 ## Usage
 
