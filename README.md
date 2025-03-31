@@ -1,34 +1,35 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-Simply - this package is a catch-all CLI for Telicent frontend. It is Basically scripts for our NPM packages
+A CLI for Telicent engineers when creating [JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code)
 
-A more complex definition: A CLI package to capture & propagate _Telicent frontend opinion_ on code, config & tools
 
-Install this in each npm package repository to provide:
-1. Some scripts to manually-trigger
-    * idea: generate Telicent-flavoured™ Cypress config
-2. Some scripts to use in hooks
-    * idea: echo "tefe test-only-changed-files" >> ./husky/pre-commit
-3. Some self-executing checks
-    * idea: on CI, check yarn.lock didn't change after yarn install
+This CLI centralizes common commands and configuration, enforcing a consistent approach across projects. It auto-runs on the npm `postinstall` hook, and regularly checks and modifies project files—for example, ensuring a standardized GitHub PR template exists.
 
-And perhaps if we add globally-useful dev-scripts, we end up using this as a global install on our dev machines
 
-## Install
+## Background
 
-```sh
-# Install within a package
-cd <npm package directory>;
-yarn add @telicent-oss/telicent-frontend-cli
-# IMPORTANT: If you use `yarn` to install in local package, prefix with "yarn" (e.g. `yarn tefe`) to ensure you don't use a globally installed tefe
-```
-
-To test:
-```sh
-yarn tefe version # or `tefe version` for global version
-```
+This tool is targeted at Telicent engineers working on Javascript code.
 
 ## Usage
+
+### Install
+
+1. **Install**
+   ```sh
+   # Within your project directory:
+   cd <npm project>
+   yarn add @telicent-oss/telicent-frontend-cli
+   # IMPORTANT: When using `yarn`, run commands like "yarn tefe" to ensure you use the local CLI.
+   ```
+2. **Configure Postinstall**
+   Add the following to your package.json `script` field:
+   ```json
+   "postinstall": "[ \"$LOCAL_MACHINE\" = \"false\" ] && echo 'Skipping tefe hook-postinstall' || tefe hook-postinstall"
+   ```
+4. **Run and approve**
+   Re-run yarn install (or yarn postinstall) so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
+
+### Help
 
 All commands are available via `tefe help`:
 <!-- help -->
