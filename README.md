@@ -4,7 +4,7 @@ A CLI tool for helping create and maintain Telicent JavaScript-based projects
 
 This tool offers a collection of common commands and configurations that enable a consistent eveloper experience across Telicent projects. When integrated into a project, it provides two main benefits:
 1. It automatically checks and updates project files, such as ensuring the [CLI's standardised GitHub PR template](https://github.com/telicent-oss/telicent-frontend-cli/blob/doc/oss-narrative/.github/pull_request_template.md) is in place
-2. It exposes utility commands (via `tefe <command>` ), for instance `tefe npmrc-authtoken` allows you to pass sensitive tokens from `.npmrc`, to Docker build commands with extra safeguards
+2. It exposes utility commands (via `yarn tefe <command>` ), for instance `yarn tefe npmrc-authtoken` allows you to pass sensitive tokens from `.npmrc`, to Docker build commands with extra safeguards
 
 ## Usage
 
@@ -12,10 +12,8 @@ This tool offers a collection of common commands and configurations that enable 
 
 1. **Install**
    ```sh
-   # Within your project directory:
    cd <JavaScript-based project>
    yarn add @telicent-oss/telicent-frontend-cli -D
-   # IMPORTANT: When using `yarn`, run commands like "yarn tefe" to ensure you use the local CLI.
    ```
 2. **Configure Postinstall**
    Add the following to your package.json `script` field:
@@ -27,7 +25,7 @@ This tool offers a collection of common commands and configurations that enable 
 
 ### Help
 
-All commands are available via `tefe help`:
+All commands are available via `yarn tefe help`:
 <!-- help -->
 ```
 Usage: tefe [options] [command]
