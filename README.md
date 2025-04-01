@@ -1,6 +1,6 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-A CLI for helping create Telicent JavaScript-based projects ([JavaScript & TypeScript](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code))
+A CLI for helping create Telicent JavaScript-based projects (that use [JavaScript & TypeScript](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code))
 
 
 This tool offers a collection of common commands and configurations that provide a consistent approach and developer experience across Telicent projects. When integrated into a project, it provides two main benefits:
