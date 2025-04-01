@@ -16,11 +16,13 @@ This tool offers a collection of common commands and configurations that enable 
    yarn add @telicent-oss/telicent-frontend-cli -D
    ```
 2. **Configure Postinstall**
+
    Add the following to your package.json `script` field:
    ```json
    "postinstall": "[ \"$LOCAL_MACHINE\" = \"false\" ] && echo 'Skipping tefe hook-postinstall' || tefe hook-postinstall"
    ```
 4. **Run and approve**
+
    Re-run `yarn postinstall` so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
 
 ### Help
