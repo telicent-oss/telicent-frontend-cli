@@ -1,9 +1,11 @@
 ## Telicent Frontend CLI ("TEFE" CLI)
 
-A CLI for Telicent engineers when creating [JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code)
+A CLI for helping create Telicent [JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code)
 
 
-This CLI centralizes common commands and configuration, enforcing a consistent approach across projects. When installed in a JavaScript project - it regularly checks and modifies project files — for example, ensuring a standardized GitHub PR template exists.
+This CLI centralizes common commands and configuration, enforcing a consistent approach across Telicent projects. When installed in a project there are two main uses:
+1. automated checks and modifications of project files — for example, ensuring a standardized GitHub PR template exists
+2. exposes utility commands we have found useful in our JavaScript-based projects - for example printing values from `.npmrc` files that are masked for security by default
 
 ## Usage
 
