@@ -4,7 +4,7 @@ A CLI for helping create Telicent [JavaScript-based projects](https://github.com
 
 
 This CLI centralizes common commands and configuration, enforcing a consistent approach across Telicent projects. When installed in a project there are two main uses:
-1. enable automated checks and modifications of project files — for example, ensuring a standardized GitHub PR template exists
+1. enable automated checks and modifications of project files — for example, ensuring a [standardized GitHub PR template](https://github.com/telicent-oss/telicent-frontend-cli/blob/doc/oss-narrative/.github/pull_request_template.md) exists
 2. exposes utility commands we have found useful in our JavaScript-based projects - for example printing values from `.npmrc` files that are masked for security by default
 
 ## Usage
