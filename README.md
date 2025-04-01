@@ -1,11 +1,10 @@
-## Telicent Frontend CLI ("TEFE" CLI)
+## Telicent Frontend CLI
 
-A CLI for helping create Telicent JavaScript-based projects (that use [JavaScript & TypeScript](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code))
-
+A CLI tool for helping create and maintain Telicent JavaScript-based projects
 
 This tool offers a collection of common commands and configurations that provide a consistent approach and developer experience across Telicent projects. When integrated into a project, it provides two main benefits:
 1. It automatically checks and updates project files, such as ensuring the [CLI's standardised GitHub PR template](https://github.com/telicent-oss/telicent-frontend-cli/blob/doc/oss-narrative/.github/pull_request_template.md) is in place
-2. It exposes utility commands that simplify tasks, like extra safeguards when passing `.npmrc` values to Docker build commands
+2. It exposes utility commands (via `tefe <command>` ) that simplify tasks, like commands to provide extra safeguards when passing `.npmrc` values to Docker build commands (`tefe npmrc-authtoken`)
 
 ## Usage
 
@@ -115,3 +114,7 @@ yarn global link @telicent-oss/telicent-frontend-cli
 
 
 </details>
+
+## References
+
+ - [List of Telicent JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code))
