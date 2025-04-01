@@ -1,9 +1,10 @@
-## Telicent Frontend CLI ("TEFE" CLI)
+## Telicent Frontend CLI
 
-A CLI for Telicent engineers when creating [JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code)
+A CLI tool for helping create and maintain Telicent JavaScript-based projects
 
-
-This CLI centralizes common commands and configuration, enforcing a consistent approach across projects. When installed in a JavaScript project - it regularly checks and modifies project files — for example, ensuring a standardized GitHub PR template exists.
+This tool offers a collection of common commands and configurations that enable a consistent eveloper experience across Telicent projects. When integrated into a project, it provides two main benefits:
+1. It automatically checks and updates project files, such as ensuring the [CLI's standardised GitHub PR template](https://github.com/telicent-oss/telicent-frontend-cli/blob/doc/oss-narrative/.github/pull_request_template.md) is in place
+2. It exposes utility commands (via `yarn tefe <command>` ), for instance `yarn tefe npmrc-authtoken` allows you to pass sensitive tokens from `.npmrc`, to Docker build commands, with extra safeguards
 
 ## Usage
 
@@ -11,22 +12,22 @@ This CLI centralizes common commands and configuration, enforcing a consistent a
 
 1. **Install**
    ```sh
-   # Within your project directory:
-   cd <npm project>
-   yarn add @telicent-oss/telicent-frontend-cli
-   # IMPORTANT: When using `yarn`, run commands like "yarn tefe" to ensure you use the local CLI.
+   cd <JavaScript-based project>
+   yarn add @telicent-oss/telicent-frontend-cli -D
    ```
 2. **Configure Postinstall**
+
    Add the following to your package.json `script` field:
    ```json
    "postinstall": "[ \"$LOCAL_MACHINE\" = \"false\" ] && echo 'Skipping tefe hook-postinstall' || tefe hook-postinstall"
    ```
 4. **Run and approve**
-   Re-run yarn install (or yarn postinstall) so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
+
+   Re-run `yarn postinstall` so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
 
 ### Help
 
-All commands are available via `tefe help`:
+All commands are available via `yarn tefe help`:
 <!-- help -->
 ```
 Usage: tefe [options] [command]
@@ -113,3 +114,7 @@ yarn global link @telicent-oss/telicent-frontend-cli
 
 
 </details>
+
+## References
+
+ - [List of Telicent JavaScript-based projects](https://github.com/search?q=org%3Atelicent-oss++AND+%28language%3ATypeScript+OR+language%3AJavaScript+%29&type=code))
