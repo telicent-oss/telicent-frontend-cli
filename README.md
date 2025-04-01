@@ -2,9 +2,9 @@
 
 A CLI tool for helping create and maintain Telicent JavaScript-based projects
 
-This tool offers a collection of common commands and configurations that provide a consistent approach and developer experience across Telicent projects. When integrated into a project, it provides two main benefits:
+This tool offers a collection of common commands and configurations that enable a consistent eveloper experience across Telicent projects. When integrated into a project, it provides two main benefits:
 1. It automatically checks and updates project files, such as ensuring the [CLI's standardised GitHub PR template](https://github.com/telicent-oss/telicent-frontend-cli/blob/doc/oss-narrative/.github/pull_request_template.md) is in place
-2. It exposes utility commands (via `tefe <command>` ) that simplify tasks, like commands to provide extra safeguards when passing `.npmrc` values to Docker build commands (`tefe npmrc-authtoken`)
+2. It exposes utility commands (via `tefe <command>` ), for instance `tefe npmrc-authtoken` allows you to pass sensitive tokens from `.npmrc`, to Docker build commands with extra safeguards
 
 ## Usage
 
