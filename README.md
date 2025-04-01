@@ -14,8 +14,8 @@ This CLI centralizes common commands and configuration, enforcing a consistent a
 1. **Install**
    ```sh
    # Within your project directory:
-   cd <npm project>
-   yarn add @telicent-oss/telicent-frontend-cli
+   cd <JavaScript-based project>
+   yarn add @telicent-oss/telicent-frontend-cli -D
    # IMPORTANT: When using `yarn`, run commands like "yarn tefe" to ensure you use the local CLI.
    ```
 2. **Configure Postinstall**
@@ -24,7 +24,7 @@ This CLI centralizes common commands and configuration, enforcing a consistent a
    "postinstall": "[ \"$LOCAL_MACHINE\" = \"false\" ] && echo 'Skipping tefe hook-postinstall' || tefe hook-postinstall"
    ```
 4. **Run and approve**
-   Re-run yarn install (or yarn postinstall) so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
+   Re-run `yarn postinstall` so the CLI can check and modify your project files. When no more suggestions/errors appear, the installation is complete.
 
 ### Help
 
