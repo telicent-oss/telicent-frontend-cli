@@ -8,6 +8,64 @@ Ticket: <!-- Let the ticket expand inline. Maybe change the ticket name field fo
 
 <!-- The Solution.  -->
 
+### Design Testing
+
+* Pre-release version: <!-- v1.2.3-TELFE-123.0 -->
+* [OPTIONAL] Video walkthrough
+
+<details>
+  <summary>Screenshots</summary>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subcategory</th>
+      <th>Screenshot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content – Ideal</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>Content – Empty/Min</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>Content – Full/Max</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>Window size – Half/Min width</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>Window size – Half/Min height</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>Window size – Mobile</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>States – Validation errors/success</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>States – Network error/success</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+    <tr>
+      <td>States – env-config errors/success</td>
+      <td><!-- ideal.png --></td>
+    </tr>
+  </tbody>
+</table>
+
+
+</details>
+
 ### Testing Method
 
 <!-- Describe your testing steps -->
