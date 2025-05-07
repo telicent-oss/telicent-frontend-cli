@@ -27,12 +27,14 @@ Content:
 Window size:
 - [ ] **Min width** - show UI with minimum width supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) split screen
 - [ ] **Min height** - show UI with minimum height supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) half height
-- [ ] **Mobile** - show UI on [most common work mobile screens](https://www.google.com/search?q=most+common+work+mobile+screen+resolution+now)
 
 States:
 - [ ] **Form validation** - show UI for validation errors, hints and success
 - [ ] **Network states** - show UI for fetch failures and success
 - [ ] **env-config errors** - show release-engineer UI for app config errors
+
+Accessibility:
+- [ ] new issues introduced this PR (perhaps include report before, and report after)
 
 </details>
 
