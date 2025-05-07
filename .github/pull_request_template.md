@@ -13,24 +13,26 @@ Ticket: <!-- Let the ticket expand inline. Maybe change the ticket name field fo
 Pre-release version: <!-- v1.2.3-TELFE-123.0 -->
 
 <details>
-  <summary>Testing plan</summary>
+  <summary>Areas of design approval</summary>
+
+Ideally each has a artifacts for quick-approval
 
   <hr />
 
 Content:
-- [ ] Ideal
-- [ ] Empty/Min
-- [ ] Full/Max
+- [ ] **Ideal** - show UI with "happy content" i.e. what Figma considers typical
+- [ ] **Empty** - show UI with empty (or minimum) content
+- [ ] **Full** - show UI with all (or technically maximum) content
 
 Window size:
-- [ ] Half/Min width 
-- [ ] Half/Min height
-- [ ] Mobile
+- [ ] **Min width** - show UI with minimum width supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) split screen
+- [ ] **Min height** - show UI with minimum height supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) half height
+- [ ] **Mobile** - show UI on [work mobile screens](https://www.google.com/search?q=most+common+work+mobile+screen+resolution+now)
 
 States:
-- [ ] Validation errors/success
-- [ ] Network error/success
-- [ ] env-config errors/success
+- [ ] **Form validation** - show UI for validation errors, hints and success
+- [ ] **Network states** - show UI for fetch failures and success
+- [ ] **env-config errors** - show release-engineer UI for app config errors
 
 </details>
 
