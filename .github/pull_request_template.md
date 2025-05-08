@@ -11,31 +11,29 @@ Ticket: <!-- Let the ticket expand inline. Maybe change the ticket name field fo
 ### Design Testing
 
 - Pre-release version: _e.g. v1.2.3-JIRA-123.0_ <!-- create a prerelease branch, build it, and push it with flux. By also including the version here u allow Dev testers to verify the right version is deployed  -->
-- [ ] This PR is setup for easy assessment of "Design approval areas" (e.g. screenshots or video)  <!-- Action each "Areas of Design Approval" break-out section below, "[x]" (click) for complete, and "[-]" for not-applicable -->
+- [ ] This PR is setup for easy assessment of "<strong>Design approval areas</strong>")  
 
 <details>
-  <summary>Design approval areas</summary>
-
-A _indicative_ list of design approval areas.
+  <summary><strong>Design approval areas</strong></summary>
 
   <hr />
+  
+  A _indicative_ list of suggested screenshots or videos.
 
-Content:
-- [ ] **Ideal** - show UI with "happy content" i.e. what Figma considers typical
-- [ ] **Empty** - show UI with empty (or minimum) content
-- [ ] **Full** - show UI with all (or technically maximum) content
+  Action each: Mark "`[x]`" (click) for _complete_, or "`[-]`" for _not-applicable_.
 
-Window size:
-- [ ] **Min width** - show UI with minimum width supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) split screen
-- [ ] **Min height** - show UI with minimum height supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) half height
-
-States:
-- [ ] **Form validation** - show UI for validation errors, hints and success
-- [ ] **Network states** - show UI for fetch failures and success
-- [ ] **env-config errors** - show release-engineer UI for app config errors
-
-Accessibility:
-- [ ] new issues introduced this PR (perhaps include report before, and report after)
+  - [ ] UI content:
+    - [ ] **Ideal** - show UI with "happy content" i.e. what Figma considers typical
+    - [ ] **Empty** - show UI with empty (or minimum) content
+    - [ ] **Full** - show UI with all (or technically maximum) content
+  - [ ] UI States:
+    - [ ] **Form validation** - show UI for validation errors, hints and success
+    - [ ] **Network states** - show UI for fetch failures and success
+    - [ ] **env-config errors** - show release-engineer UI for app config errors
+  - [ ] Responsiveness:
+    - [ ] **Min width** - show UI with minimum width supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) split screen
+    - [ ] **Min height** - show UI with minimum height supported by parent container, or [most common desktop](https://www.google.com/search?q=most+common+desktop+screen+resolution+now) half height
+  - [ ] Accessibility: new issues introduced this PR (perhaps include report before, and report after)
 
 </details>
 
