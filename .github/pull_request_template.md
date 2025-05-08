@@ -11,10 +11,12 @@ Ticket: <!-- Let the ticket expand inline. Maybe change the ticket name field fo
 ### Design Testing
 
 - Pre-release version: _e.g. v1.2.3-JIRA-123.0_ <!-- create a prerelease branch, build it, and push it with flux. By also including the version here u allow Dev testers to verify the right version is deployed  -->
-- [ ] This PR has all screenshots/video/deployment required for Design approval <!-- Action each "Areas of Design Approval" break-out section below, "[x]" (click) for complete, and "[-]" for not-applicable -->
+- [ ] This PR is setup for easy assessment of "Design approval areas" (e.g. screenshots or video)  <!-- Action each "Areas of Design Approval" break-out section below, "[x]" (click) for complete, and "[-]" for not-applicable -->
 
 <details>
-  <summary>Areas for Design approval</summary>
+  <summary>Design approval areas</summary>
+
+A _indicative_ list of design approval areas.
 
   <hr />
 
