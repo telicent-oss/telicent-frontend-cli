@@ -10,6 +10,14 @@
 
 
 
+## [1.3.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.0...v1.3.1) (2025-06-09)
+
+
+### Bug Fixes
+
+* LICENSE ([#47](https://github.com/telicent-oss/telicent-frontend-cli/issues/47)) ([463457f](https://github.com/telicent-oss/telicent-frontend-cli/commit/463457f39a358df2c5e4c19cc2899c30b9c27e7b))
+* **README.md:** Clarity ([#41](https://github.com/telicent-oss/telicent-frontend-cli/issues/41)) ([7a2be5a](https://github.com/telicent-oss/telicent-frontend-cli/commit/7a2be5a799cf2acc788693d377b655f2eb0d632c))
+
 ## [1.3.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.2.1...v1.3.0) (2025-02-21)
 
 
