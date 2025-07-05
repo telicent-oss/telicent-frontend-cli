@@ -10,6 +10,13 @@
 
 
 
+## [1.3.2](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.1...v1.3.2) (2025-07-05)
+
+
+### Bug Fixes
+
+* **actions/cache:** 3 -&gt; 4 ([#48](https://github.com/telicent-oss/telicent-frontend-cli/issues/48)) ([38e4772](https://github.com/telicent-oss/telicent-frontend-cli/commit/38e47723a145a57e6390a70711555fabab7637de))
+
 ## [1.3.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.0...v1.3.1) (2025-06-09)
 
 
