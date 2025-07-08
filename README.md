@@ -47,6 +47,7 @@ Commands:
   docker-build             docker build
   docker-run               docker run
   docker-open              open app in docker
+  prerelease               push prerelease branch
   help [command]           display help for command
 
 ```

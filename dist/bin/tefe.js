@@ -51,6 +51,11 @@ program
     .description('Locally opens FE app in local container')
     .summary('open app in docker')
     .action(runScript('../../scripts/docker/open'));
+program
+    .command('prerelease')
+    .description('If branch includes JIRA ticket number - Then derive and push a prerelease branch for easy manual call of publish.yml ')
+    .summary('push prerelease branch')
+    .action(runScript('../../scripts/prerelease/run'));
 // Parse and execute the commands
 try {
     program.parse(process.argv);
