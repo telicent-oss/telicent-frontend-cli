@@ -10,6 +10,13 @@
 
 
 
+## [1.4.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.3...v1.4.0) (2025-07-08)
+
+
+### Features
+
+* **prerelease:** add script ([#52](https://github.com/telicent-oss/telicent-frontend-cli/issues/52)) ([e5a34ae](https://github.com/telicent-oss/telicent-frontend-cli/commit/e5a34aed36b3a9add4f2d9e30a7a82cbabda0733))
+
 ## [1.3.3](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.2...v1.3.3) (2025-07-05)
 
 
