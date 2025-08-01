@@ -1,9 +1,8 @@
 import fs from 'fs'
-import c from 'chalk'
 import { getLocalPath } from '../../utils/getLocalPath.js'
+import { CTA } from '../../constants.js'
 
 const pull_request_template_md = '.github/pull_request_template.md'
-const CTA = c.redBright('USER ACTION REQUIRED')
 const CLI = `@telicent-oss/telicent-frontend-cli`
 
 export const writePullRequestTemplate = (): void => {
