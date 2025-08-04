@@ -44,6 +44,8 @@ Commands:
   npmrc-authtoken [value]  Fetch NPM configuration tokens from the nearest
                            npmrc file (WARNING: Has limitations see
                            extractTokens.ts TODO)
+  update-deps [options]    Take name & version in source/package.json - and
+                           update in dependencies found in targetConfig.json
   docker-build             docker build
   docker-run               docker run
   docker-open              open app in docker

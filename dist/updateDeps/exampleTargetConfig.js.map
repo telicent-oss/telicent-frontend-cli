@@ -1,0 +1,1 @@
+{"version":3,"file":"exampleTargetConfig.js","sourceRoot":"","sources":["../../src/updateDeps/exampleTargetConfig.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,mBAAmB,GAAG;IACjC,sBAAsB,EAAE;IACtB,iCAAiC;KAClC;IACD,kCAAkC,EAAE;QAClC,oBAAoB,EAAE,oBAAoB;KAC3C;CACF,CAAC"}

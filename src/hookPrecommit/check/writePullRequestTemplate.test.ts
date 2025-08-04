@@ -16,6 +16,8 @@ vi.mock('../../utils/getLocalPath', () => ({
 vi.mock('chalk', () => ({
   default: {
     redBright: (text: string) => text,
+    yellowBright: (text: string) => text,
+    bold: (text: string) => text,
   },
 }))
 
