@@ -10,6 +10,13 @@
 
 
 
+## [1.5.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.4.0...v1.5.0) (2025-08-04)
+
+
+### Features
+
+* **updateDeps:** [TELFE-1274] added ([#54](https://github.com/telicent-oss/telicent-frontend-cli/issues/54)) ([f36d47c](https://github.com/telicent-oss/telicent-frontend-cli/commit/f36d47c521a2951fa546469a76cdb874e8fb7bd1))
+
 ## [1.4.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.3.3...v1.4.0) (2025-07-08)
 
 
