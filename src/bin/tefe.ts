@@ -14,6 +14,7 @@ import { hookPrecommit } from '../hookPrecommit/hookPrecommit.js';
 import { hookPostinstall } from '../hookPostinstall/hookPostinstall.js';
 import { updateDeps } from '../updateDeps/index.js';
 import { exampleTargetConfig } from '../updateDeps/exampleTargetConfig.js';
+import { devScript } from '../devScript/devScript.js';
 
 program
   .command('version')
@@ -61,8 +62,14 @@ program
   )
   .requiredOption('-s, --source <package.json>', 'location of source package.json')
   .requiredOption('-t, --target <updateDepsConfig.json>', 'location of config file')
-  .option('--skip-postUpdateDependency', `Ignore "postUpdateDependency" commands in targetConfig.json (useful for sequencing commands in mono-repos)`)
-  .option('--skip-updateDependency', `Ignore "updateDependency" (useful for sequencing commands in mono-repos)`)
+  .option(
+    '--skip-postUpdateDependency',
+    `Ignore "postUpdateDependency" commands in targetConfig.json (useful for sequencing commands in mono-repos)`,
+  )
+  .option(
+    '--skip-updateDependency',
+    `Ignore "updateDependency" (useful for sequencing commands in mono-repos)`,
+  )
   .action(updateDeps);
 
 program
@@ -90,6 +97,14 @@ program
   )
   .summary('push prerelease branch')
   .action(runScript('../../scripts/prerelease/run'));
+
+program
+  .command('dev-script <script>')
+  .description(
+    'Ensure the given dev proxy script exists (copy from the .example if needed),\n' +
+      'prompt to fill in any placeholder values, and then optionally execute it.',
+  )
+  .action(devScript);
 
 // Parse and execute the commands
 try {
