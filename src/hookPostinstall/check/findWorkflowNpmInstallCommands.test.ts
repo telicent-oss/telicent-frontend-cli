@@ -25,7 +25,7 @@ vi.mock('chalk', () => ({
   },
 }))
 
-import { findWorkflowNpmInstallCommands } from './findWorkflowNpmInstallCommands'
+import { findWorkflowNpmInstallCommands } from './findWorkflowNpmInstallCommands.js'
 
 let consoleOutput: string[] = []
 const mockedConsoleError = (output: string) => consoleOutput.push(output)

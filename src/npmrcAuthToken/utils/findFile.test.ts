@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { findFile } from './findFile' // Adjust the import path as necessary
+import { findFile } from './findFile.js' // Adjust the import path as necessary
 import * as fs from 'fs'
 import * as path from 'path'
 

@@ -23,7 +23,7 @@
     "tefe": "./dist/bin/tefe.js"
   },
   "description": "A CLI for FE engineers",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "keywords": [
     "cli",
     "telicent"
