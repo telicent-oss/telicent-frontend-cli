@@ -10,6 +10,13 @@
 
 
 
+## [1.5.1](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.5.0...v1.5.1) (2025-09-26)
+
+
+### Bug Fixes
+
+* **config:** intuitive file extensions ([#56](https://github.com/telicent-oss/telicent-frontend-cli/issues/56)) ([d9cc9b8](https://github.com/telicent-oss/telicent-frontend-cli/commit/d9cc9b84fff392ec0cf2f2e8314cc870f1f76eef))
+
 ## [1.5.0](https://github.com/telicent-oss/telicent-frontend-cli/compare/v1.4.0...v1.5.0) (2025-08-04)
 
 
