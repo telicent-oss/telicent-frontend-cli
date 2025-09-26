@@ -1,6 +1,6 @@
 import { describe, it, beforeEach, afterEach, vi, expect } from 'vitest'
 import { fs as memfs, vol } from 'memfs'
-import { writePullRequestTemplate } from './writePullRequestTemplate' // Adjust the import path as needed
+import { writePullRequestTemplate } from './writePullRequestTemplate.js' // Adjust the import path as needed
 
 // Mocking filesystem and path utilities
 vi.mock('fs', () => ({

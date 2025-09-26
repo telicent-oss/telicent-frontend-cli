@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest'
-import { mask } from './mask'
+import { mask } from './mask.js'
 
 test(`mask`, () => {
   expect(mask('1234123411234')).toMatchInlineSnapshot(`"1234*********"`)

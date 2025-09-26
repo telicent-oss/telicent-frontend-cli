@@ -1,6 +1,6 @@
 import { describe, it, beforeEach, afterEach, vi, expect } from 'vitest'
 import { fs as memfs, vol } from 'memfs'
-import { tryWritePrecommit } from './tryWritePrecommit' // Adjust the import path as needed
+import { tryWritePrecommit } from './tryWritePrecommit.js' // Adjust the import path as needed
 
 vi.mock('fs', () => ({
   default: {

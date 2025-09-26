@@ -1,6 +1,6 @@
 import { vi, test, expect } from 'vitest'
-import { extractTokens } from './extractTokens'
-import * as authTokenModule from './authTokenPattern'
+import { extractTokens } from './extractTokens.js'
+import * as authTokenModule from './authTokenPattern.js'
 
 test(`extractTokens`, () => {
   expect(
